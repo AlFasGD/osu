@@ -87,7 +87,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
 
             private Bindable<double> cursorScale;
             private Bindable<bool> autoCursorScale;
-            private readonly IBindable<WorkingBeatmap> beatmap = new Bindable<WorkingBeatmap>();
+            private Bindable<WorkingBeatmap> beatmap;
 
             public OsuCursor()
             {
@@ -96,7 +96,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
             }
 
             [BackgroundDependencyLoader]
-            private void load(OsuConfigManager config, IBindableBeatmap beatmap)
+            private void load(OsuConfigManager config, OsuGameBase game)
             {
                 Child = cursorContainer = new SkinnableDrawable("cursor", _ => new CircularContainer
                 {
@@ -160,7 +160,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
                     RelativeSizeAxes = Axes.Both,
                 };
 
-                this.beatmap.BindTo(beatmap);
+                beatmap = game.Beatmap.GetBoundCopy();
                 beatmap.ValueChanged += v => calculateScale();
 
                 cursorScale = config.GetBindable<double>(OsuSetting.GameplayCursorSize);

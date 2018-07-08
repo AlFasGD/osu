@@ -107,20 +107,13 @@ namespace osu.Game.Overlays.Profile.Header
             visibleBadge = 0;
 
             badgeFlowContainer.Clear();
-            for (var index = 0; index < badges.Length; index++)
+            foreach (var badge in badges)
             {
-                int displayIndex = index;
-                LoadComponentAsync(new DrawableBadge(badges[index])
+                LoadComponentAsync(new DrawableBadge(badge)
                 {
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.TopCentre,
-                }, asyncBadge =>
-                {
-                    badgeFlowContainer.Add(asyncBadge);
-
-                    // load in stable order regardless of async load order.
-                    badgeFlowContainer.SetLayoutPosition(asyncBadge, displayIndex);
-                });
+                }, badgeFlowContainer.Add);
             }
         }
 

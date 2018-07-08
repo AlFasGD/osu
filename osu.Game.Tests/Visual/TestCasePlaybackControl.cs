@@ -15,12 +15,17 @@ namespace osu.Game.Tests.Visual
     [TestFixture]
     public class TestCasePlaybackControl : OsuTestCase
     {
+        private DependencyContainer dependencies;
+
+        protected override IReadOnlyDependencyContainer CreateLocalDependencies(IReadOnlyDependencyContainer parent)
+            => dependencies = new DependencyContainer(parent);
+
         [BackgroundDependencyLoader]
         private void load()
         {
             var clock = new DecoupleableInterpolatingFramedClock { IsCoupled = false };
-            Dependencies.CacheAs<IAdjustableClock>(clock);
-            Dependencies.CacheAs<IFrameBasedClock>(clock);
+            dependencies.CacheAs<IAdjustableClock>(clock);
+            dependencies.CacheAs<IFrameBasedClock>(clock);
 
             var playback = new PlaybackControl
             {
@@ -29,7 +34,7 @@ namespace osu.Game.Tests.Visual
                 Size = new Vector2(200,100)
             };
 
-            Beatmap.Value = new TestWorkingBeatmap(new Beatmap());
+            playback.Beatmap.Value = new TestWorkingBeatmap(new Beatmap());
 
             Child = playback;
         }

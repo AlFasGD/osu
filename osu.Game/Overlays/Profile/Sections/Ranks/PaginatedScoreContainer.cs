@@ -8,7 +8,6 @@ using osu.Game.Online.API.Requests;
 using osu.Game.Users;
 using System;
 using System.Linq;
-using osu.Game.Online.API.Requests.Responses;
 
 namespace osu.Game.Overlays.Profile.Sections.Ranks
 {
@@ -50,7 +49,7 @@ namespace osu.Game.Overlays.Profile.Sections.Ranks
 
                 MissingText.Hide();
 
-                foreach (APIScore score in scores)
+                foreach (OnlineScore score in scores)
                 {
                     DrawableProfileScore drawableScore;
 

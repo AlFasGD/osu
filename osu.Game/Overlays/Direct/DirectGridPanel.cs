@@ -166,13 +166,14 @@ namespace osu.Game.Overlays.Direct
                                         },
                                     },
                                 },
-                                new DownloadButton(SetInfo)
+                                new DownloadButton
                                 {
                                     Size = new Vector2(30),
                                     Margin = new MarginPadding(horizontal_padding),
                                     Anchor = Anchor.CentreRight,
                                     Origin = Anchor.CentreRight,
                                     Colour = colours.Gray5,
+                                    Action = StartDownload
                                 },
                             },
                         },

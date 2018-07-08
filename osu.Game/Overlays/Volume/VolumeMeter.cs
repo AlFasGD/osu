@@ -167,25 +167,9 @@ namespace osu.Game.Overlays.Volume
             private set => Bindable.Value = value;
         }
 
-        private const float adjust_step = 0.05f;
+        public void Increase() => Volume += 0.05f;
 
-        public void Increase() => adjust(1);
-        public void Decrease() => adjust(-1);
-
-        private void adjust(int direction)
-        {
-            float amount = adjust_step * direction;
-
-            var mouse = GetContainingInputManager().CurrentState.Mouse;
-            if (mouse.HasPreciseScroll)
-            {
-                float scrollDelta = mouse.ScrollDelta.Y;
-                if (scrollDelta != 0)
-                    amount *= Math.Abs(scrollDelta / 10);
-            }
-
-            Volume += amount;
-        }
+        public void Decrease() => Volume -= 0.05f;
 
         public bool OnPressed(GlobalAction action)
         {

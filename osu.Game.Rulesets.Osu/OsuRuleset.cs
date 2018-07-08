@@ -93,26 +93,57 @@ namespace osu.Game.Rulesets.Osu
                     {
                         new OsuModEasy(),
                         new OsuModNoFail(),
-                        new MultiMod(new OsuModHalfTime(), new OsuModDaycore()),
+                        new MultiMod
+                        {
+                            Mods = new Mod[]
+                            {
+                                new OsuModHalfTime(),
+                                new OsuModDaycore(),
+                            },
+                        },
                     };
+
                 case ModType.DifficultyIncrease:
                     return new Mod[]
                     {
                         new OsuModHardRock(),
-                        new MultiMod(new OsuModSuddenDeath(), new OsuModPerfect()),
-                        new MultiMod(new OsuModDoubleTime(), new OsuModNightcore()),
+                        new MultiMod
+                        {
+                            Mods = new Mod[]
+                            {
+                                new OsuModSuddenDeath(),
+                                new OsuModPerfect(),
+                            },
+                        },
+                        new MultiMod
+                        {
+                            Mods = new Mod[]
+                            {
+                                new OsuModDoubleTime(),
+                                new OsuModNightcore(),
+                            },
+                        },
                         new OsuModHidden(),
                         new OsuModFlashlight(),
                     };
+
                 case ModType.Special:
                     return new Mod[]
                     {
                         new OsuModRelax(),
                         new OsuModAutopilot(),
                         new OsuModSpunOut(),
-                        new MultiMod(new OsuModAutoplay(), new ModCinema()),
+                        new MultiMod
+                        {
+                            Mods = new Mod[]
+                            {
+                                new OsuModAutoplay(),
+                                new ModCinema(),
+                            },
+                        },
                         new OsuModTarget(),
                     };
+
                 default:
                     return new Mod[] { };
             }

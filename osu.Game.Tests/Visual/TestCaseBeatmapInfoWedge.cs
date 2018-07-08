@@ -6,6 +6,7 @@ using System.Linq;
 using NUnit.Framework;
 using OpenTK;
 using osu.Framework.Allocation;
+using osu.Framework.Configuration;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Beatmaps;
@@ -28,11 +29,14 @@ namespace osu.Game.Tests.Visual
         private RulesetStore rulesets;
         private TestBeatmapInfoWedge infoWedge;
         private readonly List<IBeatmap> beatmaps = new List<IBeatmap>();
+        private readonly Bindable<WorkingBeatmap> beatmap = new Bindable<WorkingBeatmap>();
 
         [BackgroundDependencyLoader]
-        private void load(RulesetStore rulesets)
+        private void load(OsuGameBase game, RulesetStore rulesets)
         {
             this.rulesets = rulesets;
+
+            beatmap.BindTo(game.Beatmap);
         }
 
         protected override void LoadComplete()
@@ -49,11 +53,11 @@ namespace osu.Game.Tests.Visual
             AddStep("show", () =>
             {
                 infoWedge.State = Visibility.Visible;
-                infoWedge.Beatmap = Beatmap;
+                infoWedge.Beatmap = beatmap;
             });
 
             // select part is redundant, but wait for load isn't
-            selectBeatmap(Beatmap.Value.Beatmap);
+            selectBeatmap(beatmap.Value.Beatmap);
 
             AddWaitStep(3);
 
@@ -116,8 +120,8 @@ namespace osu.Game.Tests.Visual
         {
             selectNullBeatmap();
             AddAssert("check empty version", () => string.IsNullOrEmpty(infoWedge.Info.VersionLabel.Text));
-            AddAssert("check default title", () => infoWedge.Info.TitleLabel.Text == Beatmap.Default.BeatmapInfo.Metadata.Title);
-            AddAssert("check default artist", () => infoWedge.Info.ArtistLabel.Text == Beatmap.Default.BeatmapInfo.Metadata.Artist);
+            AddAssert("check default title", () => infoWedge.Info.TitleLabel.Text == beatmap.Default.BeatmapInfo.Metadata.Title);
+            AddAssert("check default artist", () => infoWedge.Info.ArtistLabel.Text == beatmap.Default.BeatmapInfo.Metadata.Artist);
             AddAssert("check empty author", () => !infoWedge.Info.MapperContainer.Children.Any());
             AddAssert("check no infolabels", () => !infoWedge.Info.InfoLabelContainer.Children.Any());
         }
@@ -129,7 +133,7 @@ namespace osu.Game.Tests.Visual
             AddStep($"select {b.Metadata.Title} beatmap", () =>
             {
                 infoBefore = infoWedge.Info;
-                infoWedge.Beatmap = Beatmap.Value = new TestWorkingBeatmap(b);
+                infoWedge.Beatmap = beatmap.Value = new TestWorkingBeatmap(b);
             });
 
             AddUntilStep(() => infoWedge.Info != infoBefore, "wait for async load");
@@ -139,8 +143,8 @@ namespace osu.Game.Tests.Visual
         {
             AddStep("select null beatmap", () =>
             {
-                Beatmap.Value = Beatmap.Default;
-                infoWedge.Beatmap = Beatmap;
+                beatmap.Value = beatmap.Default;
+                infoWedge.Beatmap = beatmap;
             });
         }
 

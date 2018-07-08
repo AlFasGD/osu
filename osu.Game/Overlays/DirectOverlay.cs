@@ -28,6 +28,7 @@ namespace osu.Game.Overlays
 
         private APIAccess api;
         private RulesetStore rulesets;
+        private BeatmapManager beatmaps;
 
         private readonly FillFlowContainer resultCountsContainer;
         private readonly OsuSpriteText resultCountsText;
@@ -176,13 +177,23 @@ namespace osu.Game.Overlays
         }
 
         [BackgroundDependencyLoader]
-        private void load(OsuColour colours, APIAccess api, RulesetStore rulesets)
+        private void load(OsuColour colours, APIAccess api, RulesetStore rulesets, BeatmapManager beatmaps)
         {
             this.api = api;
             this.rulesets = rulesets;
+            this.beatmaps = beatmaps;
 
             resultCountsContainer.Colour = colours.Yellow;
+
+            beatmaps.ItemAdded += setAdded;
         }
+
+        private void setAdded(BeatmapSetInfo set) => Schedule(() =>
+        {
+            // if a new map was imported, we should remove it from search results (download completed etc.)
+            panels?.FirstOrDefault(p => p.SetInfo.OnlineBeatmapSetID == set.OnlineBeatmapSetID)?.FadeOut(400).Expire();
+            BeatmapSets = BeatmapSets?.Where(b => b.OnlineBeatmapSetID != set.OnlineBeatmapSetID);
+        });
 
         private void updateResultCounts()
         {
@@ -286,7 +297,9 @@ namespace osu.Game.Overlays
             {
                 Task.Run(() =>
                 {
-                    var sets = response.Select(r => r.ToBeatmapSet(rulesets)).ToList();
+                    var onlineIds = response.Select(r => r.OnlineBeatmapSetID).ToList();
+                    var presentOnlineIds = beatmaps.QueryBeatmapSets(s => onlineIds.Contains(s.OnlineBeatmapSetID) && !s.DeletePending).Select(r => r.OnlineBeatmapSetID).ToList();
+                    var sets = response.Select(r => r.ToBeatmapSet(rulesets)).Where(b => !presentOnlineIds.Contains(b.OnlineBeatmapSetID)).ToList();
 
                     // may not need scheduling; loads async internally.
                     Schedule(() =>
@@ -309,6 +322,14 @@ namespace osu.Game.Overlays
         }
 
         private int distinctCount(List<string> list) => list.Distinct().ToArray().Length;
+
+        protected override void Dispose(bool isDisposing)
+        {
+            base.Dispose(isDisposing);
+
+            if (beatmaps != null)
+                beatmaps.ItemAdded -= setAdded;
+        }
 
         public class ResultCounts
         {

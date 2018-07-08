@@ -12,10 +12,9 @@ namespace osu.Game.Tests.Visual
         [BackgroundDependencyLoader]
         private void load(OsuGameBase game)
         {
-            Beatmap.Value = new DummyWorkingBeatmap(game);
-
             AddStep("load dummy beatmap", () => Add(new PlayerLoader(new Player
             {
+                InitialBeatmap = new DummyWorkingBeatmap(game),
                 AllowPause = false,
                 AllowLeadIn = false,
                 AllowResults = false,

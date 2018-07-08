@@ -3,6 +3,7 @@
 
 using System.ComponentModel;
 using System.Linq;
+using osu.Game.Beatmaps;
 using osu.Game.Rulesets;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Screens.Play;
@@ -12,20 +13,23 @@ namespace osu.Game.Tests.Visual
     [Description("Player instantiated with a replay.")]
     public class TestCaseReplay : TestCasePlayer
     {
-        protected override Player CreatePlayer(Ruleset ruleset)
+        protected override Player CreatePlayer(WorkingBeatmap beatmap, Ruleset ruleset)
         {
             // We create a dummy RulesetContainer just to get the replay - we don't want to use mods here
             // to simulate setting a replay rather than having the replay already set for us
-            Beatmap.Value.Mods.Value = Beatmap.Value.Mods.Value.Concat(new[] { ruleset.GetAutoplayMod() });
-            var dummyRulesetContainer = ruleset.CreateRulesetContainerWith(Beatmap.Value);
+            beatmap.Mods.Value = beatmap.Mods.Value.Concat(new[] { ruleset.GetAutoplayMod() });
+            var dummyRulesetContainer = ruleset.CreateRulesetContainerWith(beatmap);
 
             // We have the replay
             var replay = dummyRulesetContainer.Replay;
 
             // Reset the mods
-            Beatmap.Value.Mods.Value = Beatmap.Value.Mods.Value.Where(m => !(m is ModAutoplay));
+            beatmap.Mods.Value = beatmap.Mods.Value.Where(m => !(m is ModAutoplay));
 
-            return new ReplayPlayer(replay);
+            return new ReplayPlayer(replay)
+            {
+                InitialBeatmap = beatmap
+            };
         }
     }
 }

@@ -20,17 +20,19 @@ namespace osu.Game.Screens.Edit.Components.Timelines.Summary
         [BackgroundDependencyLoader]
         private void load(OsuColour colours, IAdjustableClock adjustableClock)
         {
+            TimelinePart markerPart, controlPointPart, bookmarkPart, breakPart;
+
             Children = new Drawable[]
             {
-                new MarkerPart(adjustableClock) { RelativeSizeAxes = Axes.Both },
-                new ControlPointPart
+                markerPart = new MarkerPart(adjustableClock) { RelativeSizeAxes = Axes.Both },
+                controlPointPart = new ControlPointPart
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.BottomCentre,
                     RelativeSizeAxes = Axes.Both,
                     Height = 0.35f
                 },
-                new BookmarkPart
+                bookmarkPart = new BookmarkPart
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.TopCentre,
@@ -65,7 +67,7 @@ namespace osu.Game.Screens.Edit.Components.Timelines.Summary
                         },
                     }
                 },
-                new BreakPart
+                breakPart = new BreakPart
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
@@ -73,6 +75,11 @@ namespace osu.Game.Screens.Edit.Components.Timelines.Summary
                     Height = 0.25f
                 }
             };
+
+            markerPart.Beatmap.BindTo(Beatmap);
+            controlPointPart.Beatmap.BindTo(Beatmap);
+            bookmarkPart.Beatmap.BindTo(Beatmap);
+            breakPart.Beatmap.BindTo(Beatmap);
         }
     }
 }

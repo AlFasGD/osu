@@ -12,30 +12,27 @@ using osu.Game.Graphics.Sprites;
 using osu.Framework.Allocation;
 using osu.Framework.Localisation;
 using osu.Framework.Graphics.Shapes;
-using osu.Framework.Input;
 using osu.Game.Beatmaps;
 
 namespace osu.Game.Overlays.Direct
 {
     public class DirectListPanel : DirectPanel
     {
-        private const float transition_duration = 120;
         private const float horizontal_padding = 10;
         private const float vertical_padding = 5;
         private const float height = 70;
-
-        private PlayButton playButton;
-        private Box progressBar;
-        private Container downloadContainer;
-
-        protected override PlayButton PlayButton => playButton;
-        protected override Box PreviewBar => progressBar;
 
         public DirectListPanel(BeatmapSetInfo beatmap) : base(beatmap)
         {
             RelativeSizeAxes = Axes.X;
             Height = height;
         }
+
+        private PlayButton playButton;
+        private Box progressBar;
+
+        protected override PlayButton PlayButton => playButton;
+        protected override Box PreviewBar => progressBar;
 
         [BackgroundDependencyLoader]
         private void load(LocalisationEngine localisation, OsuColour colours)
@@ -62,7 +59,7 @@ namespace osu.Game.Overlays.Direct
                             AutoSizeAxes = Axes.Both,
                             Direction = FillDirection.Horizontal,
                             LayoutEasing = Easing.OutQuint,
-                            LayoutDuration = transition_duration,
+                            LayoutDuration = 120,
                             Spacing = new Vector2(10, 0),
                             Children = new Drawable[]
                             {
@@ -107,68 +104,52 @@ namespace osu.Game.Overlays.Direct
                             Anchor = Anchor.TopRight,
                             Origin = Anchor.TopRight,
                             AutoSizeAxes = Axes.Both,
-                            Direction = FillDirection.Horizontal,
-                            LayoutEasing = Easing.OutQuint,
-                            LayoutDuration = transition_duration,
+                            Direction = FillDirection.Vertical,
+                            Margin = new MarginPadding { Right = height - vertical_padding * 2 + vertical_padding },
                             Children = new Drawable[]
                             {
-                                downloadContainer = new Container
+                                new Statistic(FontAwesome.fa_play_circle, SetInfo.OnlineInfo?.PlayCount ?? 0)
                                 {
-                                    Anchor = Anchor.TopRight,
-                                    Origin = Anchor.TopRight,
-                                    AutoSizeAxes = Axes.Both,
-                                    Alpha = 0,
-                                    Child = new DownloadButton(SetInfo)
-                                    {
-                                        Size = new Vector2(height - vertical_padding * 2),
-                                        Margin = new MarginPadding { Left = vertical_padding },
-                                    },
+                                    Margin = new MarginPadding { Right = 1 },
                                 },
+                                new Statistic(FontAwesome.fa_heart, SetInfo.OnlineInfo?.FavouriteCount ?? 0),
                                 new FillFlowContainer
                                 {
                                     Anchor = Anchor.TopRight,
                                     Origin = Anchor.TopRight,
                                     AutoSizeAxes = Axes.Both,
-                                    Direction = FillDirection.Vertical,
-                                    Children = new Drawable[]
+                                    Direction = FillDirection.Horizontal,
+                                    Children = new[]
                                     {
-                                        new Statistic(FontAwesome.fa_play_circle, SetInfo.OnlineInfo?.PlayCount ?? 0)
+                                        new OsuSpriteText
                                         {
-                                            Margin = new MarginPadding { Right = 1 },
-                                        },
-                                        new Statistic(FontAwesome.fa_heart, SetInfo.OnlineInfo?.FavouriteCount ?? 0),
-                                        new FillFlowContainer
-                                        {
-                                            Anchor = Anchor.TopRight,
-                                            Origin = Anchor.TopRight,
-                                            AutoSizeAxes = Axes.Both,
-                                            Direction = FillDirection.Horizontal,
-                                            Children = new[]
-                                            {
-                                                new OsuSpriteText
-                                                {
-                                                    Text = "mapped by ",
-                                                    TextSize = 14,
-                                                },
-                                                new OsuSpriteText
-                                                {
-                                                    Text = SetInfo.Metadata.Author.Username,
-                                                    TextSize = 14,
-                                                    Font = @"Exo2.0-SemiBoldItalic",
-                                                },
-                                            },
+                                            Text = "mapped by ",
+                                            TextSize = 14,
                                         },
                                         new OsuSpriteText
                                         {
-                                            Text = $"from {SetInfo.Metadata.Source}",
-                                            Anchor = Anchor.TopRight,
-                                            Origin = Anchor.TopRight,
+                                            Text = SetInfo.Metadata.Author.Username,
                                             TextSize = 14,
-                                            Alpha = string.IsNullOrEmpty(SetInfo.Metadata.Source) ? 0f : 1f,
+                                            Font = @"Exo2.0-SemiBoldItalic",
                                         },
                                     },
                                 },
+                                new OsuSpriteText
+                                {
+                                    Text = $"from {SetInfo.Metadata.Source}",
+                                    Anchor = Anchor.TopRight,
+                                    Origin = Anchor.TopRight,
+                                    TextSize = 14,
+                                    Alpha = string.IsNullOrEmpty(SetInfo.Metadata.Source) ? 0f : 1f,
+                                },
                             },
+                        },
+                        new DownloadButton
+                        {
+                            Anchor = Anchor.TopRight,
+                            Origin = Anchor.TopRight,
+                            Size = new Vector2(height - vertical_padding * 2),
+                            Action = StartDownload
                         },
                     },
                 },
@@ -183,18 +164,6 @@ namespace osu.Game.Overlays.Direct
                     Colour = colours.Yellow,
                 },
             });
-        }
-
-        protected override bool OnHover(InputState state)
-        {
-            downloadContainer.FadeIn(transition_duration, Easing.InOutQuint);
-            return base.OnHover(state);
-        }
-
-        protected override void OnHoverLost(InputState state)
-        {
-            downloadContainer.FadeOut(transition_duration, Easing.InOutQuint);
-            base.OnHoverLost(state);
         }
     }
 }

@@ -277,13 +277,8 @@ namespace osu.Game.Rulesets.Mania.UI
             if (action != Action)
                 return false;
 
-            var nextObject =
-                HitObjects.AliveObjects.FirstOrDefault(h => h.HitObject.StartTime > Time.Current) ??
-                // fallback to non-alive objects to find next off-screen object
-                HitObjects.Objects.FirstOrDefault(h => h.HitObject.StartTime > Time.Current) ??
-                HitObjects.Objects.LastOrDefault();
-
-            nextObject?.PlaySamples();
+            var hitObject = HitObjects.Objects.LastOrDefault(h => h.HitObject.StartTime > Time.Current) ?? HitObjects.Objects.FirstOrDefault();
+            hitObject?.PlaySamples();
 
             return true;
         }

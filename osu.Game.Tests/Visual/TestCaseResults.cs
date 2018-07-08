@@ -32,13 +32,18 @@ namespace osu.Game.Tests.Visual
             this.beatmaps = beatmaps;
         }
 
+        private WorkingBeatmap beatmap;
+
         protected override void LoadComplete()
         {
             base.LoadComplete();
 
-            var beatmapInfo = beatmaps.QueryBeatmap(b => b.RulesetID == 0);
-            if (beatmapInfo != null)
-                Beatmap.Value = beatmaps.GetWorkingBeatmap(beatmapInfo);
+            if (beatmap == null)
+            {
+                var beatmapInfo = beatmaps.QueryBeatmap(b => b.RulesetID == 0);
+                if (beatmapInfo != null)
+                    beatmap = beatmaps.GetWorkingBeatmap(beatmapInfo);
+            }
 
             Add(new Results(new Score
             {
@@ -58,7 +63,10 @@ namespace osu.Game.Tests.Visual
                 {
                     Username = "peppy",
                 }
-            }));
+            })
+            {
+                InitialBeatmap = beatmap
+            });
         }
     }
 }

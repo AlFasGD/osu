@@ -13,7 +13,7 @@ namespace osu.Game.Screens.Play
 {
     public abstract class ScreenWithBeatmapBackground : OsuScreen
     {
-        protected override BackgroundScreen CreateBackground() => new BackgroundScreenBeatmap(Beatmap.Value);
+        protected override BackgroundScreen CreateBackground() => new BackgroundScreenBeatmap(Beatmap);
 
         public override bool AllowBeatmapRulesetChange => false;
 

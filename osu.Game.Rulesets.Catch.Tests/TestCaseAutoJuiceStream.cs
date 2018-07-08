@@ -53,10 +53,10 @@ namespace osu.Game.Rulesets.Catch.Tests
             return beatmap;
         }
 
-        protected override Player CreatePlayer(Ruleset ruleset)
+        protected override Player CreatePlayer(WorkingBeatmap beatmap, Ruleset ruleset)
         {
-            Beatmap.Value.Mods.Value = Beatmap.Value.Mods.Value.Concat(new[] { ruleset.GetAutoplayMod() });
-            return base.CreatePlayer(ruleset);
+            beatmap.Mods.Value = beatmap.Mods.Value.Concat(new[] { ruleset.GetAutoplayMod() });
+            return base.CreatePlayer(beatmap, ruleset);
         }
     }
 }

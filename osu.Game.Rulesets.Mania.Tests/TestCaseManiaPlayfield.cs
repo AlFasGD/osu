@@ -98,12 +98,17 @@ namespace osu.Game.Rulesets.Mania.Tests
             });
         }
 
+        private DependencyContainer dependencies;
+
+        protected override IReadOnlyDependencyContainer CreateLocalDependencies(IReadOnlyDependencyContainer parent)
+            => dependencies = new DependencyContainer(base.CreateLocalDependencies(parent));
+
         [BackgroundDependencyLoader]
         private void load(RulesetStore rulesets, SettingsStore settings)
         {
             maniaRuleset = rulesets.GetRuleset(3);
 
-            Dependencies.Cache(new ManiaConfigManager(settings, maniaRuleset, 4));
+            dependencies.Cache(new ManiaConfigManager(settings, maniaRuleset, 4));
         }
 
         private ManiaPlayfield createPlayfield(int cols, bool inverted = false)

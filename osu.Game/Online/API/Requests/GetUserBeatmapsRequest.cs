@@ -3,11 +3,10 @@
 
 using Humanizer;
 using System.Collections.Generic;
-using osu.Game.Online.API.Requests.Responses;
 
 namespace osu.Game.Online.API.Requests
 {
-    public class GetUserBeatmapsRequest : APIRequest<List<APIBeatmapSet>>
+    public class GetUserBeatmapsRequest : APIRequest<List<APIResponseBeatmapSet>>
     {
         private readonly long userId;
         private readonly int offset;

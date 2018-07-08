@@ -8,7 +8,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Online.API;
 using osu.Game.Online.API.Requests;
-using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Online.Chat;
 using osu.Game.Screens.Select.Leaderboards;
 
@@ -18,11 +17,11 @@ namespace osu.Game.Overlays.Profile.Sections.Recent
     {
         private APIAccess api;
 
-        private readonly APIRecentActivity activity;
+        private readonly RecentActivity activity;
 
         private LinkFlowContainer content;
 
-        public DrawableRecentActivity(APIRecentActivity activity)
+        public DrawableRecentActivity(RecentActivity activity)
         {
             this.activity = activity;
         }
