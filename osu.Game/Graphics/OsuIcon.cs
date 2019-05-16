@@ -14,6 +14,8 @@ namespace osu.Game.Graphics
         public static IconUsage RulesetMania => Get(0xe001);
         public static IconUsage RulesetCatch => Get(0xe002);
         public static IconUsage RulesetTaiko => Get(0xe003);
+        // TODO: Edit the values once the font is edited
+        public static IconUsage RulesetKeijo => Get(0xe003);
 
         // ruleset icons without circles
         public static IconUsage FilledCircle => Get(0xe004);
@@ -71,6 +73,14 @@ namespace osu.Game.Graphics
         public static IconUsage HardMania => Get(0xe026);
         public static IconUsage InsaneMania => Get(0xe027);
         public static IconUsage ExpertMania => Get(0xe028);
+
+        // keijo difficulties
+        // TODO: Edit the values once the font is edited
+        public static IconUsage EasyKeijo => Get(0xe024);
+        public static IconUsage NormalKeijo => Get(0xe025);
+        public static IconUsage HardKeijo => Get(0xe026);
+        public static IconUsage InsaneKeijo => Get(0xe027);
+        public static IconUsage ExpertKeijo => Get(0xe028);
 
         // mod icons
         public static IconUsage ModPerfect => Get(0xe049);
