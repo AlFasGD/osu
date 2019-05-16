@@ -7,7 +7,7 @@ using osu.Game.Rulesets.Osu.Objects.Drawables;
 
 namespace osu.Game.Rulesets.Osu.Edit.Blueprints.HitCircles
 {
-    public class HitCircleSelectionBlueprint : OsuSelectionBlueprint
+    public class HitCircleSelectionBlueprint : KeijoSelectionBlueprint
     {
         public HitCircleSelectionBlueprint(DrawableHitCircle hitCircle)
             : base(hitCircle)

@@ -18,7 +18,7 @@ using osu.Game.Rulesets.Scoring;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables
 {
-    public class DrawableSpinner : DrawableOsuHitObject
+    public class DrawableSpinner : DrawableKeijoHitObject
     {
         protected readonly Spinner Spinner;
 

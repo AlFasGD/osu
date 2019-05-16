@@ -13,7 +13,7 @@ using osu.Game.Skinning;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables
 {
-    public class DrawableRepeatPoint : DrawableOsuHitObject, ITrackSnaking
+    public class DrawableRepeatPoint : DrawableKeijoHitObject, ITrackSnaking
     {
         private readonly RepeatPoint repeatPoint;
         private readonly DrawableSlider drawableSlider;

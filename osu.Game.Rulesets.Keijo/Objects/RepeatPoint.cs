@@ -9,7 +9,7 @@ using osu.Game.Rulesets.Osu.Judgements;
 
 namespace osu.Game.Rulesets.Osu.Objects
 {
-    public class RepeatPoint : OsuHitObject
+    public class RepeatPoint : KeijoHitObject
     {
         public int RepeatIndex { get; set; }
         public double SpanDuration { get; set; }
@@ -27,6 +27,6 @@ namespace osu.Game.Rulesets.Osu.Objects
                 TimePreempt = Math.Min(SpanDuration * 2, TimePreempt);
         }
 
-        public override Judgement CreateJudgement() => new OsuJudgement();
+        public override Judgement CreateJudgement() => new KeijoJudgement();
     }
 }

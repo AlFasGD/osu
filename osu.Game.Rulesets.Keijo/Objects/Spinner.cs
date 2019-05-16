@@ -10,7 +10,7 @@ using osu.Game.Rulesets.Osu.Judgements;
 
 namespace osu.Game.Rulesets.Osu.Objects
 {
-    public class Spinner : OsuHitObject, IHasEndTime
+    public class Spinner : KeijoHitObject, IHasEndTime
     {
         public double EndTime { get; set; }
         public double Duration => EndTime - StartTime;
@@ -30,6 +30,6 @@ namespace osu.Game.Rulesets.Osu.Objects
             SpinsRequired = (int)Math.Max(1, SpinsRequired * 0.6);
         }
 
-        public override Judgement CreateJudgement() => new OsuJudgement();
+        public override Judgement CreateJudgement() => new KeijoJudgement();
     }
 }

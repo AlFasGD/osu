@@ -18,7 +18,7 @@ using osu.Game.Skinning;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables
 {
-    public class DrawableSlider : DrawableOsuHitObject, IDrawableHitObjectWithProxiedApproach
+    public class DrawableSlider : DrawableKeijoHitObject, IDrawableHitObjectWithProxiedApproach
     {
         private readonly Slider slider;
         private readonly List<Drawable> components = new List<Drawable>();
@@ -34,7 +34,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables
         private readonly IBindable<SliderPath> pathBindable = new Bindable<SliderPath>();
 
         [Resolved(CanBeNull = true)]
-        private OsuRulesetConfigManager config { get; set; }
+        private KeijoRulesetConfigManager config { get; set; }
 
         public DrawableSlider(Slider s)
             : base(s)

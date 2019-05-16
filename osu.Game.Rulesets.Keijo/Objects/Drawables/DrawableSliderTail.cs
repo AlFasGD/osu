@@ -9,7 +9,7 @@ using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables
 {
-    public class DrawableSliderTail : DrawableOsuHitObject, IRequireTracking
+    public class DrawableSliderTail : DrawableKeijoHitObject, IRequireTracking
     {
         private readonly Slider slider;
 

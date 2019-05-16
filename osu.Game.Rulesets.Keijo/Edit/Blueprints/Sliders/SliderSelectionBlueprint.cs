@@ -9,7 +9,7 @@ using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders
 {
-    public class SliderSelectionBlueprint : OsuSelectionBlueprint
+    public class SliderSelectionBlueprint : KeijoSelectionBlueprint
     {
         private readonly SliderCircleSelectionBlueprint headBlueprint;
 

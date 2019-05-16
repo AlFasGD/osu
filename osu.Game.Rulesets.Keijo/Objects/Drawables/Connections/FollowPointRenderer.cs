@@ -9,7 +9,7 @@ using osu.Game.Rulesets.Objects.Types;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables.Connections
 {
-    public class FollowPointRenderer : ConnectionRenderer<OsuHitObject>
+    public class FollowPointRenderer : ConnectionRenderer<KeijoHitObject>
     {
         private int pointDistance = 32;
 
@@ -45,9 +45,9 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Connections
             }
         }
 
-        private IEnumerable<OsuHitObject> hitObjects;
+        private IEnumerable<KeijoHitObject> hitObjects;
 
-        public override IEnumerable<OsuHitObject> HitObjects
+        public override IEnumerable<KeijoHitObject> HitObjects
         {
             get => hitObjects;
             set
@@ -66,7 +66,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Connections
             if (hitObjects == null)
                 return;
 
-            OsuHitObject prevHitObject = null;
+            KeijoHitObject prevHitObject = null;
 
             foreach (var currHitObject in hitObjects)
             {

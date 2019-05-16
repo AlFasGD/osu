@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Graphics;
@@ -19,7 +19,7 @@ namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Spinners
         private bool isPlacingEnd;
 
         public SpinnerPlacementBlueprint()
-            : base(new Spinner { Position = OsuPlayfield.BASE_SIZE / 2 })
+            : base(new Spinner { Position = KeijoPlayfield.BASE_SIZE / 2 })
         {
             InternalChild = piece = new SpinnerPiece(HitObject) { Alpha = 0.5f };
         }

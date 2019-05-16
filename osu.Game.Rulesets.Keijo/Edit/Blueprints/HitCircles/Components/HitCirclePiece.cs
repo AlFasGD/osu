@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
@@ -20,7 +20,7 @@ namespace osu.Game.Rulesets.Osu.Edit.Blueprints.HitCircles.Components
             this.hitCircle = hitCircle;
             Origin = Anchor.Centre;
 
-            Size = new Vector2((float)OsuHitObject.OBJECT_RADIUS * 2);
+            Size = new Vector2((float)KeijoHitObject.OBJECT_RADIUS * 2);
             Scale = new Vector2(hitCircle.Scale);
             CornerRadius = Size.X / 2;
 

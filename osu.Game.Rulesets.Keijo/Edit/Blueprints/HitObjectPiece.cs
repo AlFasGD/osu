@@ -1,4 +1,4 @@
-// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
+﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
@@ -10,7 +10,7 @@ using osuTK;
 namespace osu.Game.Rulesets.Osu.Edit.Blueprints
 {
     /// <summary>
-    /// A piece of a blueprint which responds to changes in the state of a <see cref="OsuHitObject"/>.
+    /// A piece of a blueprint which responds to changes in the state of a <see cref="KeijoHitObject"/>.
     /// </summary>
     public abstract class HitObjectPiece : CompositeDrawable
     {
@@ -18,9 +18,9 @@ namespace osu.Game.Rulesets.Osu.Edit.Blueprints
         protected readonly IBindable<int> StackHeightBindable = new Bindable<int>();
         protected readonly IBindable<float> ScaleBindable = new Bindable<float>();
 
-        private readonly OsuHitObject hitObject;
+        private readonly KeijoHitObject hitObject;
 
-        protected HitObjectPiece(OsuHitObject hitObject)
+        protected HitObjectPiece(KeijoHitObject hitObject)
         {
             this.hitObject = hitObject;
         }

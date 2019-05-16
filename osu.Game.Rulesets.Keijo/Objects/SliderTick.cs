@@ -8,7 +8,7 @@ using osu.Game.Rulesets.Osu.Judgements;
 
 namespace osu.Game.Rulesets.Osu.Objects
 {
-    public class SliderTick : OsuHitObject
+    public class SliderTick : KeijoHitObject
     {
         public int SpanIndex { get; set; }
         public double SpanStartTime { get; set; }
@@ -29,6 +29,6 @@ namespace osu.Game.Rulesets.Osu.Objects
             TimePreempt = (StartTime - SpanStartTime) / 2 + offset;
         }
 
-        public override Judgement CreateJudgement() => new OsuJudgement();
+        public override Judgement CreateJudgement() => new KeijoJudgement();
     }
 }

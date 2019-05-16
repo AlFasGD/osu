@@ -16,7 +16,7 @@ using osu.Game.Rulesets.Osu.Judgements;
 
 namespace osu.Game.Rulesets.Osu.Objects
 {
-    public class Slider : OsuHitObject, IHasCurve
+    public class Slider : KeijoHitObject, IHasCurve
     {
         /// <summary>
         /// Scoring distance with a speed-adjusted beat length of 1 second.
@@ -228,6 +228,6 @@ namespace osu.Game.Rulesets.Osu.Objects
         private List<SampleInfo> getNodeSamples(int nodeIndex) =>
             nodeIndex < NodeSamples.Count ? NodeSamples[nodeIndex] : Samples;
 
-        public override Judgement CreateJudgement() => new OsuJudgement();
+        public override Judgement CreateJudgement() => new KeijoJudgement();
     }
 }

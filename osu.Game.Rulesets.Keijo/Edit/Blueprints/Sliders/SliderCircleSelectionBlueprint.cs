@@ -7,9 +7,9 @@ using osu.Game.Rulesets.Osu.Objects.Drawables;
 
 namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders
 {
-    public class SliderCircleSelectionBlueprint : OsuSelectionBlueprint
+    public class SliderCircleSelectionBlueprint : KeijoSelectionBlueprint
     {
-        public SliderCircleSelectionBlueprint(DrawableOsuHitObject hitObject, Slider slider, SliderPosition position)
+        public SliderCircleSelectionBlueprint(DrawableKeijoHitObject hitObject, Slider slider, SliderPosition position)
             : base(hitObject)
         {
             InternalChild = new SliderCirclePiece(slider, position);

@@ -6,8 +6,8 @@ using osu.Game.Rulesets.Osu.Judgements;
 
 namespace osu.Game.Rulesets.Osu.Objects
 {
-    public class HitCircle : OsuHitObject
+    public class HitCircle : KeijoHitObject
     {
-        public override Judgement CreateJudgement() => new OsuJudgement();
+        public override Judgement CreateJudgement() => new KeijoJudgement();
     }
 }

@@ -14,7 +14,7 @@ using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables
 {
-    public class DrawableHitCircle : DrawableOsuHitObject, IDrawableHitObjectWithProxiedApproach
+    public class DrawableHitCircle : DrawableKeijoHitObject, IDrawableHitObjectWithProxiedApproach
     {
         public ApproachCircle ApproachCircle;
         private readonly CirclePiece circle;
