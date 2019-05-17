@@ -22,9 +22,9 @@ namespace osu.Game.Rulesets.Osu.Mods
 
         private const float default_flashlight_size = 180;
 
-        private OsuFlashlight flashlight;
+        private KeijoFlashlight flashlight;
 
-        public override Flashlight CreateFlashlight() => flashlight = new OsuFlashlight();
+        public override Flashlight CreateFlashlight() => flashlight = new KeijoFlashlight();
 
         public void ApplyToDrawableHitObjects(IEnumerable<DrawableHitObject> drawables)
         {
@@ -34,9 +34,9 @@ namespace osu.Game.Rulesets.Osu.Mods
             }
         }
 
-        private class OsuFlashlight : Flashlight, IRequireHighFrequencyMousePosition
+        private class KeijoFlashlight : Flashlight, IRequireHighFrequencyMousePosition
         {
-            public OsuFlashlight()
+            public KeijoFlashlight()
             {
                 FlashlightSize = new Vector2(0, getSizeFor(0));
             }

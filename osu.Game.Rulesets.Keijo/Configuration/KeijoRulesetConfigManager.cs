@@ -6,7 +6,7 @@ using osu.Game.Rulesets.Configuration;
 
 namespace osu.Game.Rulesets.Osu.Configuration
 {
-    public class KeijoRulesetConfigManager : RulesetConfigManager<OsuRulesetSetting>
+    public class KeijoRulesetConfigManager : RulesetConfigManager<KeijoRulesetSetting>
     {
         public KeijoRulesetConfigManager(SettingsStore settings, RulesetInfo ruleset, int? variant = null)
             : base(settings, ruleset, variant)
@@ -16,13 +16,13 @@ namespace osu.Game.Rulesets.Osu.Configuration
         protected override void InitialiseDefaults()
         {
             base.InitialiseDefaults();
-            Set(OsuRulesetSetting.SnakingInSliders, true);
-            Set(OsuRulesetSetting.SnakingOutSliders, true);
-            Set(OsuRulesetSetting.ShowCursorTrail, true);
+            Set(KeijoRulesetSetting.SnakingInSliders, true);
+            Set(KeijoRulesetSetting.SnakingOutSliders, true);
+            Set(KeijoRulesetSetting.ShowCursorTrail, true);
         }
     }
 
-    public enum OsuRulesetSetting
+    public enum KeijoRulesetSetting
     {
         SnakingInSliders,
         SnakingOutSliders,

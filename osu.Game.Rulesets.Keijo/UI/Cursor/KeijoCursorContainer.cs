@@ -11,7 +11,7 @@ using osu.Game.Rulesets.UI;
 
 namespace osu.Game.Rulesets.Osu.UI.Cursor
 {
-    public class KeijoCursorContainer : GameplayCursorContainer, IKeyBindingHandler<OsuAction>
+    public class KeijoCursorContainer : GameplayCursorContainer, IKeyBindingHandler<KeijoAction>
     {
         protected override Drawable CreateCursor() => new KeijoCursor();
 
@@ -38,7 +38,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
         [BackgroundDependencyLoader(true)]
         private void load(KeijoRulesetConfigManager config)
         {
-            config?.BindWith(OsuRulesetSetting.ShowCursorTrail, showTrail);
+            config?.BindWith(KeijoRulesetSetting.ShowCursorTrail, showTrail);
 
             showTrail.BindValueChanged(v => cursorTrail.FadeTo(v.NewValue ? 1 : 0, 200), true);
         }
@@ -53,12 +53,12 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
                 (ActiveCursor as KeijoCursor)?.Contract();
         }
 
-        public bool OnPressed(OsuAction action)
+        public bool OnPressed(KeijoAction action)
         {
             switch (action)
             {
-                case OsuAction.LeftButton:
-                case OsuAction.RightButton:
+                case KeijoAction.LeftButton:
+                case KeijoAction.RightButton:
                     downCount++;
                     updateExpandedState();
                     break;
@@ -67,12 +67,12 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
             return false;
         }
 
-        public bool OnReleased(OsuAction action)
+        public bool OnReleased(KeijoAction action)
         {
             switch (action)
             {
-                case OsuAction.LeftButton:
-                case OsuAction.RightButton:
+                case KeijoAction.LeftButton:
+                case KeijoAction.RightButton:
                     if (--downCount == 0)
                         updateExpandedState();
                     break;

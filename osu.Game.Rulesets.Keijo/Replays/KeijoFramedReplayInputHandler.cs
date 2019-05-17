@@ -44,9 +44,9 @@ namespace osu.Game.Rulesets.Osu.Replays
                 {
                     Position = GamefieldToScreenSpace(Position ?? Vector2.Zero)
                 },
-                new ReplayState<OsuAction>
+                new ReplayState<KeijoAction>
                 {
-                    PressedActions = CurrentFrame?.Actions ?? new List<OsuAction>()
+                    PressedActions = CurrentFrame?.Actions ?? new List<KeijoAction>()
                 }
             };
         }

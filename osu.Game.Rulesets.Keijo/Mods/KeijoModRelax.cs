@@ -65,14 +65,14 @@ namespace osu.Game.Rulesets.Osu.Mods
 
             wasHit = hitting;
 
-            var state = new ReplayState<OsuAction>
+            var state = new ReplayState<KeijoAction>
             {
-                PressedActions = new List<OsuAction>()
+                PressedActions = new List<KeijoAction>()
             };
 
             if (hitting)
             {
-                state.PressedActions.Add(wasLeft ? OsuAction.LeftButton : OsuAction.RightButton);
+                state.PressedActions.Add(wasLeft ? KeijoAction.LeftButton : KeijoAction.RightButton);
                 wasLeft = !wasLeft;
             }
 

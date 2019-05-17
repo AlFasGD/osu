@@ -9,28 +9,28 @@ using osu.Game.Rulesets.UI;
 
 namespace osu.Game.Rulesets.Osu
 {
-    public class KeijoInputManager : RulesetInputManager<OsuAction>
+    public class KeijoInputManager : RulesetInputManager<KeijoAction>
     {
-        public IEnumerable<OsuAction> PressedActions => KeyBindingContainer.PressedActions;
+        public IEnumerable<KeijoAction> PressedActions => KeyBindingContainer.PressedActions;
 
         public bool AllowUserPresses
         {
-            set => ((OsuKeyBindingContainer)KeyBindingContainer).AllowUserPresses = value;
+            set => ((KeijoKeyBindingContainer)KeyBindingContainer).AllowUserPresses = value;
         }
 
         protected override RulesetKeyBindingContainer CreateKeyBindingContainer(RulesetInfo ruleset, int variant, SimultaneousBindingMode unique)
-            => new OsuKeyBindingContainer(ruleset, variant, unique);
+            => new KeijoKeyBindingContainer(ruleset, variant, unique);
 
         public KeijoInputManager(RulesetInfo ruleset)
             : base(ruleset, 0, SimultaneousBindingMode.Unique)
         {
         }
 
-        private class OsuKeyBindingContainer : RulesetKeyBindingContainer
+        private class KeijoKeyBindingContainer : RulesetKeyBindingContainer
         {
             public bool AllowUserPresses = true;
 
-            public OsuKeyBindingContainer(RulesetInfo ruleset, int variant, SimultaneousBindingMode unique)
+            public KeijoKeyBindingContainer(RulesetInfo ruleset, int variant, SimultaneousBindingMode unique)
                 : base(ruleset, variant, unique)
             {
             }
@@ -44,7 +44,7 @@ namespace osu.Game.Rulesets.Osu
         }
     }
 
-    public enum OsuAction
+    public enum KeijoAction
     {
         [Description("Left button")]
         LeftButton,

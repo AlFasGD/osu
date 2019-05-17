@@ -10,14 +10,14 @@ using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
 {
-    public class CirclePiece : Container, IKeyBindingHandler<OsuAction>
+    public class CirclePiece : Container, IKeyBindingHandler<KeijoAction>
     {
         // IsHovered is used
         public override bool HandlePositionalInput => true;
 
         public Func<bool> Hit;
 
-        public OsuAction? HitAction;
+        public KeijoAction? HitAction;
 
         public CirclePiece()
         {
@@ -31,12 +31,12 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
             InternalChild = new SkinnableDrawable("Play/osu/hitcircle", _ => new DefaultCirclePiece());
         }
 
-        public bool OnPressed(OsuAction action)
+        public bool OnPressed(KeijoAction action)
         {
             switch (action)
             {
-                case OsuAction.LeftButton:
-                case OsuAction.RightButton:
+                case KeijoAction.LeftButton:
+                case KeijoAction.RightButton:
                     if (IsHovered && (Hit?.Invoke() ?? false))
                     {
                         HitAction = action;
@@ -49,6 +49,6 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
             return false;
         }
 
-        public bool OnReleased(OsuAction action) => false;
+        public bool OnReleased(KeijoAction action) => false;
     }
 }

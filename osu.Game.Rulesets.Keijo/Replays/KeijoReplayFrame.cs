@@ -13,13 +13,13 @@ namespace osu.Game.Rulesets.Osu.Replays
     public class KeijoReplayFrame : ReplayFrame, IConvertibleReplayFrame
     {
         public Vector2 Position;
-        public List<OsuAction> Actions = new List<OsuAction>();
+        public List<KeijoAction> Actions = new List<KeijoAction>();
 
         public KeijoReplayFrame()
         {
         }
 
-        public KeijoReplayFrame(double time, Vector2 position, params OsuAction[] actions)
+        public KeijoReplayFrame(double time, Vector2 position, params KeijoAction[] actions)
             : base(time)
         {
             Position = position;
@@ -29,8 +29,8 @@ namespace osu.Game.Rulesets.Osu.Replays
         public void ConvertFrom(LegacyReplayFrame legacyFrame, IBeatmap beatmap)
         {
             Position = legacyFrame.Position;
-            if (legacyFrame.MouseLeft) Actions.Add(OsuAction.LeftButton);
-            if (legacyFrame.MouseRight) Actions.Add(OsuAction.RightButton);
+            if (legacyFrame.MouseLeft) Actions.Add(KeijoAction.LeftButton);
+            if (legacyFrame.MouseRight) Actions.Add(KeijoAction.RightButton);
         }
     }
 }

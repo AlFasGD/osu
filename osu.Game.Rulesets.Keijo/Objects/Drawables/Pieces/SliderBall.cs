@@ -21,7 +21,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
 
         private Color4 accentColour = Color4.Black;
 
-        public Func<OsuAction?> GetInitialHitAction;
+        public Func<KeijoAction?> GetInitialHitAction;
 
         /// <summary>
         /// The colour that is used for the slider ball.
@@ -182,7 +182,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
             // if the head circle was hit with a specific key, tracking should only occur while that key is pressed.
             if (headCircleHitAction != null && timeToAcceptAnyKeyAfter == null)
             {
-                var otherKey = headCircleHitAction == OsuAction.RightButton ? OsuAction.LeftButton : OsuAction.RightButton;
+                var otherKey = headCircleHitAction == KeijoAction.RightButton ? KeijoAction.LeftButton : KeijoAction.RightButton;
 
                 // we can return to accepting all keys if the initial head circle key is the *only* key pressed, or all keys have been released.
                 if (actions?.Contains(otherKey) != true)
@@ -201,7 +201,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
         /// <summary>
         /// Check whether a given user input is a valid tracking action.
         /// </summary>
-        private bool isValidTrackingAction(OsuAction action)
+        private bool isValidTrackingAction(KeijoAction action)
         {
             bool headCircleHit = GetInitialHitAction().HasValue;
 
@@ -209,7 +209,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
             if (headCircleHit && (!timeToAcceptAnyKeyAfter.HasValue || Time.Current <= timeToAcceptAnyKeyAfter.Value))
                 return action == GetInitialHitAction();
 
-            return action == OsuAction.LeftButton || action == OsuAction.RightButton;
+            return action == KeijoAction.LeftButton || action == KeijoAction.RightButton;
         }
 
         public void UpdateProgress(double completionProgress)

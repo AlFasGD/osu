@@ -18,7 +18,7 @@ namespace osu.Game.Rulesets.Osu.UI
 {
     public class KeijoResumeOverlay : ResumeOverlay
     {
-        private OsuClickToResumeCursor clickToResumeCursor;
+        private KeijoClickToResumeCursor clickToResumeCursor;
 
         private GameplayCursorContainer localCursorContainer;
 
@@ -29,7 +29,7 @@ namespace osu.Game.Rulesets.Osu.UI
         [BackgroundDependencyLoader]
         private void load()
         {
-            Add(clickToResumeCursor = new OsuClickToResumeCursor { ResumeRequested = Resume });
+            Add(clickToResumeCursor = new KeijoClickToResumeCursor { ResumeRequested = Resume });
         }
 
         public override void Show()
@@ -51,13 +51,13 @@ namespace osu.Game.Rulesets.Osu.UI
 
         protected override bool OnHover(HoverEvent e) => true;
 
-        public class OsuClickToResumeCursor : KeijoCursor, IKeyBindingHandler<OsuAction>
+        public class KeijoClickToResumeCursor : KeijoCursor, IKeyBindingHandler<KeijoAction>
         {
             public override bool HandlePositionalInput => true;
 
             public Action ResumeRequested;
 
-            public OsuClickToResumeCursor()
+            public KeijoClickToResumeCursor()
             {
                 RelativePositionAxes = Axes.Both;
             }
@@ -74,12 +74,12 @@ namespace osu.Game.Rulesets.Osu.UI
                 base.OnHoverLost(e);
             }
 
-            public bool OnPressed(OsuAction action)
+            public bool OnPressed(KeijoAction action)
             {
                 switch (action)
                 {
-                    case OsuAction.LeftButton:
-                    case OsuAction.RightButton:
+                    case KeijoAction.LeftButton:
+                    case KeijoAction.RightButton:
                         if (!IsHovered) return false;
 
                         this.ScaleTo(new Vector2(2), TRANSITION_TIME, Easing.OutQuint);
@@ -91,7 +91,7 @@ namespace osu.Game.Rulesets.Osu.UI
                 return false;
             }
 
-            public bool OnReleased(OsuAction action) => false;
+            public bool OnReleased(KeijoAction action) => false;
 
             public void ShowAt(Vector2 activeCursorPosition) => Schedule(() =>
             {

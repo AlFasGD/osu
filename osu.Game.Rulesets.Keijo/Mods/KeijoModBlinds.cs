@@ -30,11 +30,11 @@ namespace osu.Game.Rulesets.Osu.Mods
         public override bool Ranked => false;
 
         public override double ScoreMultiplier => 1.12;
-        private DrawableOsuBlinds blinds;
+        private DrawableKeijoBlinds blinds;
 
         public void ApplyToDrawableRuleset(DrawableRuleset<KeijoHitObject> drawableRuleset)
         {
-            drawableRuleset.Overlays.Add(blinds = new DrawableOsuBlinds(drawableRuleset.Playfield.HitObjectContainer, drawableRuleset.Beatmap));
+            drawableRuleset.Overlays.Add(blinds = new DrawableKeijoBlinds(drawableRuleset.Playfield.HitObjectContainer, drawableRuleset.Beatmap));
         }
 
         public void ApplyToScoreProcessor(ScoreProcessor scoreProcessor)
@@ -47,7 +47,7 @@ namespace osu.Game.Rulesets.Osu.Mods
         /// <summary>
         /// Element for the Blinds mod drawing 2 black boxes covering the whole screen which resize inside a restricted area with some leniency.
         /// </summary>
-        public class DrawableOsuBlinds : Container
+        public class DrawableKeijoBlinds : Container
         {
             /// <summary>
             /// Black background boxes behind blind panel textures.
@@ -82,7 +82,7 @@ namespace osu.Game.Rulesets.Osu.Mods
             /// </summary>
             private const float leniency = 0.1f;
 
-            public DrawableOsuBlinds(CompositeDrawable restrictTo, Beatmap<KeijoHitObject> beatmap)
+            public DrawableKeijoBlinds(CompositeDrawable restrictTo, Beatmap<KeijoHitObject> beatmap)
             {
                 this.restrictTo = restrictTo;
                 this.beatmap = beatmap;

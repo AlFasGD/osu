@@ -235,7 +235,7 @@ namespace osu.Game.Rulesets.Osu.Replays
         {
             // Time to insert the first frame which clicks the object
             // Here we mainly need to determine which button to use
-            var action = buttonIndex % 2 == 0 ? OsuAction.LeftButton : OsuAction.RightButton;
+            var action = buttonIndex % 2 == 0 ? KeijoAction.LeftButton : KeijoAction.RightButton;
 
             var startFrame = new KeijoReplayFrame(h.StartTime, new Vector2(startPosition.X, startPosition.Y), action);
 
@@ -261,7 +261,7 @@ namespace osu.Game.Rulesets.Osu.Replays
                     // Force alternation if we have the same button. Otherwise we can just keep the naturally to us assigned button.
                     if (previousActions.Contains(action))
                     {
-                        action = action == OsuAction.LeftButton ? OsuAction.RightButton : OsuAction.LeftButton;
+                        action = action == KeijoAction.LeftButton ? KeijoAction.RightButton : KeijoAction.LeftButton;
                         startFrame.Actions.Clear();
                         startFrame.Actions.Add(action);
                     }

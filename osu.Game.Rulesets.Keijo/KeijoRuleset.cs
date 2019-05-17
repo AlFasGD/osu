@@ -36,10 +36,10 @@ namespace osu.Game.Rulesets.Osu
 
         public override IEnumerable<KeyBinding> GetDefaultKeyBindings(int variant = 0) => new[]
         {
-            new KeyBinding(InputKey.Z, OsuAction.LeftButton),
-            new KeyBinding(InputKey.X, OsuAction.RightButton),
-            new KeyBinding(InputKey.MouseLeft, OsuAction.LeftButton),
-            new KeyBinding(InputKey.MouseRight, OsuAction.RightButton),
+            new KeyBinding(InputKey.Z, KeijoAction.LeftButton),
+            new KeyBinding(InputKey.X, KeijoAction.RightButton),
+            new KeyBinding(InputKey.MouseLeft, KeijoAction.LeftButton),
+            new KeyBinding(InputKey.MouseRight, KeijoAction.RightButton),
         };
 
         public override IEnumerable<Mod> ConvertLegacyMods(LegacyMods mods)
@@ -143,7 +143,7 @@ namespace osu.Game.Rulesets.Osu
             }
         }
 
-        public override Drawable CreateIcon() => new SpriteIcon { Icon = OsuIcon.RulesetOsu };
+        public override Drawable CreateIcon() => new SpriteIcon { Icon = OsuIcon.RulesetKeijo };
 
         public override DifficultyCalculator CreateDifficultyCalculator(WorkingBeatmap beatmap) => new KeijoDifficultyCalculator(this, beatmap);
 

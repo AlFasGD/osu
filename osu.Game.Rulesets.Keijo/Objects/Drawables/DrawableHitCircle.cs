@@ -28,7 +28,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables
         private readonly IBindable<int> stackHeightBindable = new Bindable<int>();
         private readonly IBindable<float> scaleBindable = new Bindable<float>();
 
-        public OsuAction? HitAction => circle.HitAction;
+        public KeijoAction? HitAction => circle.HitAction;
 
         private readonly Container explodeContainer;
 
