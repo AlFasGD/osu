@@ -81,7 +81,5 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
         internal KeijoInputManager OsuActionInputManager => osuActionInputManager ?? (osuActionInputManager = GetContainingInputManager() as KeijoInputManager);
 
         protected virtual void Shake(double maximumLength) => shakeContainer.Shake(maximumLength);
-
-        protected override JudgementResult CreateResult(Judgement judgement) => new KeijoJudgementResult(judgement);
     }
 }

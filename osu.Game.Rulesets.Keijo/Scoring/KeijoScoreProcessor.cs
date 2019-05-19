@@ -22,8 +22,6 @@ namespace osu.Game.Rulesets.Keijo.Scoring
 
         private float hpDrainRate;
 
-        private readonly Dictionary<ComboResult, int> comboResultCounts = new Dictionary<ComboResult, int>();
-
         protected override void ApplyBeatmap(Beatmap<KeijoHitObject> beatmap)
         {
             base.ApplyBeatmap(beatmap);
@@ -34,17 +32,6 @@ namespace osu.Game.Rulesets.Keijo.Scoring
         protected override void Reset(bool storeResults)
         {
             base.Reset(storeResults);
-            comboResultCounts.Clear();
-        }
-
-        protected override void ApplyResult(JudgementResult result)
-        {
-            base.ApplyResult(result);
-
-            var osuResult = (KeijoJudgementResult)result;
-
-            if (result.Type != HitResult.None)
-                comboResultCounts[osuResult.ComboType] = comboResultCounts.GetOrDefault(osuResult.ComboType) + 1;
         }
 
         protected override double HealthAdjustmentFactorFor(JudgementResult result)
@@ -60,9 +47,6 @@ namespace osu.Game.Rulesets.Keijo.Scoring
                 case HitResult.Meh:
                     return 4 - hpDrainRate;
 
-                // case HitResult.SliderTick:
-                //     return Math.Max(7 - hpDrainRate, 0) * 0.01;
-
                 case HitResult.Miss:
                     return hpDrainRate;
 
@@ -70,8 +54,6 @@ namespace osu.Game.Rulesets.Keijo.Scoring
                     return 0;
             }
         }
-
-        protected override JudgementResult CreateResult(Judgement judgement) => new KeijoJudgementResult(judgement);
 
         public override HitWindows CreateHitWindows() => new KeijoHitWindows();
     }
