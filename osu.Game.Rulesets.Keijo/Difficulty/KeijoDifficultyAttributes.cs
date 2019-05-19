@@ -3,7 +3,7 @@
 
 using osu.Game.Rulesets.Difficulty;
 
-namespace osu.Game.Rulesets.Osu.Difficulty
+namespace osu.Game.Rulesets.Keijo.Difficulty
 {
     public class KeijoDifficultyAttributes : DifficultyAttributes
     {

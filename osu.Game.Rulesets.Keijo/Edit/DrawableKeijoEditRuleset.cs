@@ -4,11 +4,11 @@
 using System.Collections.Generic;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Mods;
-using osu.Game.Rulesets.Osu.UI;
+using osu.Game.Rulesets.Keijo.UI;
 using osu.Game.Rulesets.UI;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Edit
+namespace osu.Game.Rulesets.Keijo.Edit
 {
     public class DrawableKeijoEditRuleset : DrawableKeijoRuleset
     {

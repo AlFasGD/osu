@@ -13,20 +13,20 @@ using osu.Game.Rulesets.Configuration;
 using osu.Game.Rulesets.Difficulty;
 using osu.Game.Rulesets.Edit;
 using osu.Game.Rulesets.Mods;
-using osu.Game.Rulesets.Osu.Beatmaps;
-using osu.Game.Rulesets.Osu.Configuration;
-using osu.Game.Rulesets.Osu.Difficulty;
-using osu.Game.Rulesets.Osu.Edit;
-using osu.Game.Rulesets.Osu.Mods;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Replays;
-using osu.Game.Rulesets.Osu.UI;
+using osu.Game.Rulesets.Keijo.Beatmaps;
+using osu.Game.Rulesets.Keijo.Configuration;
+using osu.Game.Rulesets.Keijo.Difficulty;
+using osu.Game.Rulesets.Keijo.Edit;
+using osu.Game.Rulesets.Keijo.Mods;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Replays;
+using osu.Game.Rulesets.Keijo.UI;
 using osu.Game.Rulesets.Replays.Types;
 using osu.Game.Rulesets.UI;
 using osu.Game.Scoring;
 using System.Collections.Generic;
 
-namespace osu.Game.Rulesets.Osu
+namespace osu.Game.Rulesets.Keijo
 {
     public class KeijoRuleset : Ruleset
     {

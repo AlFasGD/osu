@@ -4,19 +4,19 @@
 using osuTK;
 using osu.Framework.Graphics;
 using osu.Game.Rulesets.Objects.Drawables;
-using osu.Game.Rulesets.Osu.Objects.Drawables.Pieces;
+using osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces;
 using System.Collections.Generic;
 using System.Linq;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Rulesets.Objects;
-using osu.Game.Rulesets.Osu.Configuration;
+using osu.Game.Rulesets.Keijo.Configuration;
 using osu.Game.Rulesets.Scoring;
 using osuTK.Graphics;
 using osu.Game.Skinning;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
     public class DrawableSlider : DrawableKeijoHitObject, IDrawableHitObjectWithProxiedApproach
     {

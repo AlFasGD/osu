@@ -9,10 +9,10 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics;
 using osu.Game.Rulesets.Objects;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components
 {
     public class PathControlPointPiece : CompositeDrawable
     {

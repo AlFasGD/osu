@@ -5,10 +5,10 @@ using System;
 using System.Linq;
 using osu.Game.Rulesets.Difficulty.Preprocessing;
 using osu.Game.Rulesets.Objects;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Difficulty.Preprocessing
+namespace osu.Game.Rulesets.Keijo.Difficulty.Preprocessing
 {
     public class KeijoDifficultyHitObject : DifficultyHitObject
     {

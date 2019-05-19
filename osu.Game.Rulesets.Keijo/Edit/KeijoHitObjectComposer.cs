@@ -7,15 +7,15 @@ using osu.Game.Rulesets.Edit;
 using osu.Game.Rulesets.Edit.Tools;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Objects.Drawables;
-using osu.Game.Rulesets.Osu.Edit.Blueprints.HitCircles;
-using osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders;
-using osu.Game.Rulesets.Osu.Edit.Blueprints.Spinners;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Objects.Drawables;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.HitCircles;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.Spinners;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Objects.Drawables;
 using osu.Game.Rulesets.UI;
 using osu.Game.Screens.Edit.Compose.Components;
 
-namespace osu.Game.Rulesets.Osu.Edit
+namespace osu.Game.Rulesets.Keijo.Edit
 {
     public class KeijoHitObjectComposer : HitObjectComposer<KeijoHitObject>
     {

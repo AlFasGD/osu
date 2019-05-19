@@ -7,12 +7,12 @@ using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Rulesets.Objects.Drawables;
-using osu.Game.Rulesets.Osu.Objects.Drawables.Pieces;
+using osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces;
 using osuTK;
 using osu.Game.Rulesets.Scoring;
 using osuTK.Graphics;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
     public class DrawableHitCircle : DrawableKeijoHitObject, IDrawableHitObjectWithProxiedApproach
     {

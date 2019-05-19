@@ -4,13 +4,13 @@
 using osuTK;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Objects;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 using System.Collections.Generic;
 using osu.Game.Rulesets.Objects.Types;
 using System;
-using osu.Game.Rulesets.Osu.UI;
+using osu.Game.Rulesets.Keijo.UI;
 
-namespace osu.Game.Rulesets.Osu.Beatmaps
+namespace osu.Game.Rulesets.Keijo.Beatmaps
 {
     public class KeijoBeatmapConverter : BeatmapConverter<KeijoHitObject>
     {

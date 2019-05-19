@@ -4,10 +4,10 @@
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics.Containers;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints
 {
     /// <summary>
     /// A piece of a blueprint which responds to changes in the state of a <see cref="KeijoHitObject"/>.

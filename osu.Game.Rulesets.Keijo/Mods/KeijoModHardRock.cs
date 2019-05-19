@@ -5,11 +5,11 @@ using System.Linq;
 using osu.Framework.Extensions.IEnumerableExtensions;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Objects;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.UI;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.UI;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Mods
+namespace osu.Game.Rulesets.Keijo.Mods
 {
     public class KeijoModHardRock : ModHardRock, IApplicableToHitObject
     {

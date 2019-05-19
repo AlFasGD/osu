@@ -6,7 +6,7 @@ using osuTK;
 using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Objects.Drawables;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
     public class DrawableKeijoJudgement : DrawableJudgement
     {

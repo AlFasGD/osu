@@ -8,10 +8,10 @@ using osu.Framework.Graphics.Sprites;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Objects.Types;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Mods
+namespace osu.Game.Rulesets.Keijo.Mods
 {
     internal class KeijoModWiggle : Mod, IApplicableToDrawableHitObjects
     {

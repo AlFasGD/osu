@@ -4,12 +4,12 @@
 using System.Collections.Generic;
 using osu.Framework.Allocation;
 using osu.Game.Graphics;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Objects.Drawables.Pieces;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces;
 using osuTK;
 using osuTK.Graphics;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components
 {
     public class SliderBodyPiece : SliderPiece
     {

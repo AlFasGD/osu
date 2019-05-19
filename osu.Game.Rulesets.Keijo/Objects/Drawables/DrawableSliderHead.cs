@@ -8,7 +8,7 @@ using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Types;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
     public class DrawableSliderHead : DrawableHitCircle
     {

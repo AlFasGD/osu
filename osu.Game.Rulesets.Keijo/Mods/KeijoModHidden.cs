@@ -7,11 +7,11 @@ using System.Linq;
 using osu.Framework.Graphics;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Objects.Drawables;
-using osu.Game.Rulesets.Osu.Objects.Drawables;
+using osu.Game.Rulesets.Keijo.Objects.Drawables;
 using osu.Game.Rulesets.Objects.Types;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 
-namespace osu.Game.Rulesets.Osu.Mods
+namespace osu.Game.Rulesets.Keijo.Mods
 {
     public class KeijoModHidden : ModHidden
     {

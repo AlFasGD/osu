@@ -2,12 +2,12 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Graphics;
-using osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Objects.Drawables;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Objects.Drawables;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders
 {
     public class SliderSelectionBlueprint : KeijoSelectionBlueprint
     {

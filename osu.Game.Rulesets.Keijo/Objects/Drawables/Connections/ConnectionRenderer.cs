@@ -5,7 +5,7 @@ using osu.Framework.Graphics.Containers;
 using osu.Game.Rulesets.Objects;
 using System.Collections.Generic;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Connections
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Connections
 {
     /// <summary>
     /// Connects hit objects visually, for example with follow points.

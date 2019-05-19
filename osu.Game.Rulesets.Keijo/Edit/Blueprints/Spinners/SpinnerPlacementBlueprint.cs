@@ -4,11 +4,11 @@
 using osu.Framework.Graphics;
 using osu.Framework.Input.Events;
 using osu.Game.Rulesets.Edit;
-using osu.Game.Rulesets.Osu.Edit.Blueprints.Spinners.Components;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.UI;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.Spinners.Components;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.UI;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Spinners
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Spinners
 {
     public class SpinnerPlacementBlueprint : PlacementBlueprint
     {

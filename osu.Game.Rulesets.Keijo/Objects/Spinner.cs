@@ -6,9 +6,9 @@ using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Rulesets.Judgements;
-using osu.Game.Rulesets.Osu.Judgements;
+using osu.Game.Rulesets.Keijo.Judgements;
 
-namespace osu.Game.Rulesets.Osu.Objects
+namespace osu.Game.Rulesets.Keijo.Objects
 {
     public class Spinner : KeijoHitObject, IHasEndTime
     {

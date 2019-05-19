@@ -7,12 +7,12 @@ using System.Linq;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Difficulty;
 using osu.Game.Rulesets.Mods;
-using osu.Game.Rulesets.Osu.Mods;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Mods;
+using osu.Game.Rulesets.Keijo.Objects;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Scoring;
 
-namespace osu.Game.Rulesets.Osu.Difficulty
+namespace osu.Game.Rulesets.Keijo.Difficulty
 {
     public class KeijoPerformanceCalculator : PerformanceCalculator
     {

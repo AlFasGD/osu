@@ -3,7 +3,7 @@
 
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
     /// <summary>
     /// A component which tracks the current end snaking position of a slider.

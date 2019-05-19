@@ -8,7 +8,7 @@ using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 {
     public class SpinnerBackground : CircularContainer, IHasAccentColour
     {

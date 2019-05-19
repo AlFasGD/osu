@@ -8,7 +8,7 @@ using osu.Framework.Input.Bindings;
 using osu.Game.Skinning;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 {
     public class CirclePiece : Container, IKeyBindingHandler<KeijoAction>
     {

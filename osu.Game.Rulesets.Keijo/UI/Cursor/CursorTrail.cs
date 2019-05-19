@@ -18,7 +18,7 @@ using osuTK;
 using osuTK.Graphics;
 using osuTK.Graphics.ES30;
 
-namespace osu.Game.Rulesets.Osu.UI.Cursor
+namespace osu.Game.Rulesets.Keijo.UI.Cursor
 {
     internal class CursorTrail : Drawable, IRequireHighFrequencyMousePosition
     {

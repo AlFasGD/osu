@@ -4,7 +4,7 @@
 using osu.Game.Configuration;
 using osu.Game.Rulesets.Configuration;
 
-namespace osu.Game.Rulesets.Osu.Configuration
+namespace osu.Game.Rulesets.Keijo.Configuration
 {
     public class KeijoRulesetConfigManager : RulesetConfigManager<KeijoRulesetSetting>
     {

@@ -8,7 +8,7 @@ using osu.Framework.Bindables;
 using osu.Game.Rulesets.Objects.Types;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 {
     /// <summary>
     /// A <see cref="SliderBody"/> which changes its curve depending on the snaking progress.

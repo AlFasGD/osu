@@ -9,7 +9,7 @@ using osu.Framework.Graphics.Containers;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 {
     public class SpinnerSpmCounter : Container
     {

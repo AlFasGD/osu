@@ -11,7 +11,7 @@ using osuTK;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Skinning;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
     public class DrawableRepeatPoint : DrawableKeijoHitObject, ITrackSnaking
     {

@@ -8,7 +8,7 @@ using osuTK.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Skinning;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 {
     public class RingPiece : Container
     {

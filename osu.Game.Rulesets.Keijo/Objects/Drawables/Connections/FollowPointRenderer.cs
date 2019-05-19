@@ -7,7 +7,7 @@ using osuTK;
 using osu.Framework.Graphics;
 using osu.Game.Rulesets.Objects.Types;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Connections
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Connections
 {
     public class FollowPointRenderer : ConnectionRenderer<KeijoHitObject>
     {

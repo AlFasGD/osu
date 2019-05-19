@@ -10,7 +10,7 @@ using osu.Game.Replays;
 using osu.Game.Rulesets.Replays;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Replays
+namespace osu.Game.Rulesets.Keijo.Replays
 {
     public class KeijoFramedReplayInputHandler : FramedReplayInputHandler<KeijoReplayFrame>
     {

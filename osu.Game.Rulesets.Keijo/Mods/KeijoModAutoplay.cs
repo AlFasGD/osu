@@ -5,12 +5,12 @@ using System;
 using System.Linq;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Mods;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Replays;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Replays;
 using osu.Game.Scoring;
 using osu.Game.Users;
 
-namespace osu.Game.Rulesets.Osu.Mods
+namespace osu.Game.Rulesets.Keijo.Mods
 {
     public class KeijoModAutoplay : ModAutoplay<KeijoHitObject>
     {

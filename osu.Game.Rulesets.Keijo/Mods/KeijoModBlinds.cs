@@ -9,14 +9,14 @@ using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Mods;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.UI;
 using osu.Game.Scoring;
 using osuTK;
 using osuTK.Graphics;
 
-namespace osu.Game.Rulesets.Osu.Mods
+namespace osu.Game.Rulesets.Keijo.Mods
 {
     public class KeijoModBlinds : Mod, IApplicableToDrawableRuleset<KeijoHitObject>, IApplicableToScoreProcessor
     {

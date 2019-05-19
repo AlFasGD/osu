@@ -6,12 +6,12 @@ using osu.Framework.Extensions;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Objects;
-using osu.Game.Rulesets.Osu.Judgements;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Judgements;
+using osu.Game.Rulesets.Keijo.Objects;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.UI;
 
-namespace osu.Game.Rulesets.Osu.Scoring
+namespace osu.Game.Rulesets.Keijo.Scoring
 {
     internal class KeijoScoreProcessor : ScoreProcessor<KeijoHitObject>
     {

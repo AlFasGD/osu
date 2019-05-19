@@ -3,10 +3,10 @@
 
 using osu.Game.Rulesets.Edit;
 using osu.Game.Rulesets.Edit.Tools;
-using osu.Game.Rulesets.Osu.Edit.Blueprints.HitCircles;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.HitCircles;
+using osu.Game.Rulesets.Keijo.Objects;
 
-namespace osu.Game.Rulesets.Osu.Edit
+namespace osu.Game.Rulesets.Keijo.Edit
 {
     public class HitCircleCompositionTool : HitObjectCompositionTool
     {

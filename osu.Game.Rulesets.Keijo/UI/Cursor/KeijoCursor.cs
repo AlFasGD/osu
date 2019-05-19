@@ -14,7 +14,7 @@ using osu.Game.Skinning;
 using osuTK;
 using osuTK.Graphics;
 
-namespace osu.Game.Rulesets.Osu.UI.Cursor
+namespace osu.Game.Rulesets.Keijo.UI.Cursor
 {
     public class KeijoCursor : SkinReloadableDrawable
     {

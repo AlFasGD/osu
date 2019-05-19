@@ -3,7 +3,7 @@
 
 using osu.Game.Rulesets.Judgements;
 
-namespace osu.Game.Rulesets.Osu.Judgements
+namespace osu.Game.Rulesets.Keijo.Judgements
 {
     public class KeijoJudgementResult : JudgementResult
     {

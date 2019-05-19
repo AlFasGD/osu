@@ -4,10 +4,10 @@
 using System;
 using osu.Game.Rulesets.Difficulty.Preprocessing;
 using osu.Game.Rulesets.Difficulty.Skills;
-using osu.Game.Rulesets.Osu.Difficulty.Preprocessing;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Difficulty.Preprocessing;
+using osu.Game.Rulesets.Keijo.Objects;
 
-namespace osu.Game.Rulesets.Osu.Difficulty.Skills
+namespace osu.Game.Rulesets.Keijo.Difficulty.Skills
 {
     /// <summary>
     /// Represents the skill required to correctly aim at every object in the map with a uniform CircleSize and normalized distances.

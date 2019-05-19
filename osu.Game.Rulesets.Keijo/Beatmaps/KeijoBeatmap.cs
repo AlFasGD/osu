@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using osu.Framework.Graphics.Sprites;
 using osu.Game.Beatmaps;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 
-namespace osu.Game.Rulesets.Osu.Beatmaps
+namespace osu.Game.Rulesets.Keijo.Beatmaps
 {
     public class KeijoBeatmap : Beatmap<KeijoHitObject>
     {

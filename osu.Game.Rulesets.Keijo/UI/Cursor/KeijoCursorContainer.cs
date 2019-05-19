@@ -6,10 +6,10 @@ using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Input.Bindings;
-using osu.Game.Rulesets.Osu.Configuration;
+using osu.Game.Rulesets.Keijo.Configuration;
 using osu.Game.Rulesets.UI;
 
-namespace osu.Game.Rulesets.Osu.UI.Cursor
+namespace osu.Game.Rulesets.Keijo.UI.Cursor
 {
     public class KeijoCursorContainer : GameplayCursorContainer, IKeyBindingHandler<KeijoAction>
     {

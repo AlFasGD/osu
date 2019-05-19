@@ -3,7 +3,7 @@
 
 using osu.Game.Rulesets.Scoring;
 
-namespace osu.Game.Rulesets.Osu.Judgements
+namespace osu.Game.Rulesets.Keijo.Judgements
 {
     public class KeijoSliderTailJudgement : KeijoJudgement
     {

@@ -11,11 +11,11 @@ using osu.Game.Graphics;
 using osu.Game.Rulesets.Edit;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Types;
-using osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components;
 using osuTK;
 using osuTK.Input;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders
 {
     public class SliderPlacementBlueprint : PlacementBlueprint
     {

@@ -10,7 +10,7 @@ using osu.Game.Rulesets.Scoring;
 using osu.Game.Skinning;
 using osu.Framework.Graphics.Containers;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
     public class DrawableSliderTick : DrawableKeijoHitObject, IRequireTracking
     {

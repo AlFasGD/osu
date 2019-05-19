@@ -3,9 +3,9 @@
 
 using osu.Game.Rulesets.Edit;
 using osu.Game.Rulesets.Objects.Drawables;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints
 {
     public class KeijoSelectionBlueprint : SelectionBlueprint
     {

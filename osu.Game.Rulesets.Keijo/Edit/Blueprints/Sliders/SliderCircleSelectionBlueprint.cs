@@ -1,11 +1,11 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Objects.Drawables;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Objects.Drawables;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders
 {
     public class SliderCircleSelectionBlueprint : KeijoSelectionBlueprint
     {

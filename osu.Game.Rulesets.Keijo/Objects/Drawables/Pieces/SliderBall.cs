@@ -13,7 +13,7 @@ using osuTK.Graphics;
 using osu.Game.Skinning;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Pieces
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 {
     public class SliderBall : CircularContainer, ISliderProgress, IRequireHighFrequencyMousePosition
     {

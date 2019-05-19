@@ -6,10 +6,10 @@ using osu.Game.Beatmaps;
 using System;
 using System.Collections.Generic;
 using osu.Game.Replays;
-using osu.Game.Rulesets.Osu.UI;
+using osu.Game.Rulesets.Keijo.UI;
 using osu.Game.Rulesets.Replays;
 
-namespace osu.Game.Rulesets.Osu.Replays
+namespace osu.Game.Rulesets.Keijo.Replays
 {
     public abstract class KeijoAutoGeneratorBase : AutoGenerator
     {

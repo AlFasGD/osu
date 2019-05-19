@@ -3,7 +3,7 @@
 
 using System.ComponentModel;
 
-namespace osu.Game.Rulesets.Osu.Judgements
+namespace osu.Game.Rulesets.Keijo.Judgements
 {
     public enum ComboResult
     {

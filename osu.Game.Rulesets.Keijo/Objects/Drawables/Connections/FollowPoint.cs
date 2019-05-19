@@ -10,7 +10,7 @@ using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Skinning;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables.Connections
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Connections
 {
     public class FollowPoint : Container
     {

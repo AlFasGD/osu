@@ -2,9 +2,9 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Game.Rulesets.Judgements;
-using osu.Game.Rulesets.Osu.Judgements;
+using osu.Game.Rulesets.Keijo.Judgements;
 
-namespace osu.Game.Rulesets.Osu.Objects
+namespace osu.Game.Rulesets.Keijo.Objects
 {
     public class HitCircle : KeijoHitObject
     {

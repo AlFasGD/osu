@@ -10,11 +10,11 @@ using osu.Framework.Input.Events;
 using osu.Framework.MathUtils;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Objects.Drawables;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Objects.Drawables;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Objects.Drawables;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Mods
+namespace osu.Game.Rulesets.Keijo.Mods
 {
     public class KeijoModFlashlight : ModFlashlight<KeijoHitObject>, IApplicableToDrawableHitObjects
     {

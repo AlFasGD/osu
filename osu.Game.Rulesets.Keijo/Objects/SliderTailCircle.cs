@@ -4,9 +4,9 @@
 using osu.Framework.Bindables;
 using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Objects;
-using osu.Game.Rulesets.Osu.Judgements;
+using osu.Game.Rulesets.Keijo.Judgements;
 
-namespace osu.Game.Rulesets.Osu.Objects
+namespace osu.Game.Rulesets.Keijo.Objects
 {
     /// <summary>
     /// Note that this should not be used for timing correctness.

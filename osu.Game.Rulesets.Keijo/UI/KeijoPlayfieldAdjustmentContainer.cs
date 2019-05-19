@@ -6,7 +6,7 @@ using osu.Framework.Graphics.Containers;
 using osu.Game.Rulesets.UI;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.UI
+namespace osu.Game.Rulesets.Keijo.UI
 {
     public class KeijoPlayfieldAdjustmentContainer : PlayfieldAdjustmentContainer
     {

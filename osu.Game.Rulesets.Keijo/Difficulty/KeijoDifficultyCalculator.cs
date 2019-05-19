@@ -9,12 +9,12 @@ using osu.Game.Rulesets.Difficulty;
 using osu.Game.Rulesets.Difficulty.Preprocessing;
 using osu.Game.Rulesets.Difficulty.Skills;
 using osu.Game.Rulesets.Mods;
-using osu.Game.Rulesets.Osu.Difficulty.Preprocessing;
-using osu.Game.Rulesets.Osu.Difficulty.Skills;
-using osu.Game.Rulesets.Osu.Mods;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Difficulty.Preprocessing;
+using osu.Game.Rulesets.Keijo.Difficulty.Skills;
+using osu.Game.Rulesets.Keijo.Mods;
+using osu.Game.Rulesets.Keijo.Objects;
 
-namespace osu.Game.Rulesets.Osu.Difficulty
+namespace osu.Game.Rulesets.Keijo.Difficulty
 {
     public class KeijoDifficultyCalculator : DifficultyCalculator
     {

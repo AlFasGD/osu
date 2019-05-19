@@ -8,7 +8,7 @@ using osuTK;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Beatmaps.ControlPoints;
 
-namespace osu.Game.Rulesets.Osu.Objects
+namespace osu.Game.Rulesets.Keijo.Objects
 {
     public abstract class KeijoHitObject : HitObject, IHasComboInformation, IHasPosition
     {

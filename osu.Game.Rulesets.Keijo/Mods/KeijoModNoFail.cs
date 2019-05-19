@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using osu.Game.Rulesets.Mods;
 
-namespace osu.Game.Rulesets.Osu.Mods
+namespace osu.Game.Rulesets.Keijo.Mods
 {
     public class KeijoModNoFail : ModNoFail
     {

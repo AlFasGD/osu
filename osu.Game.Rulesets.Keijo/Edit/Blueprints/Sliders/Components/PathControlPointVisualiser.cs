@@ -4,9 +4,9 @@
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Objects;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components
 {
     public class PathControlPointVisualiser : SliderPiece
     {

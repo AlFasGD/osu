@@ -6,11 +6,11 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Objects.Drawables.Pieces;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Spinners.Components
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Spinners.Components
 {
     public class SpinnerPiece : HitObjectPiece
     {

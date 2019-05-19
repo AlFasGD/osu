@@ -6,13 +6,13 @@ using osu.Game.Rulesets.Objects.Drawables;
 using osu.Framework.Graphics;
 using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Objects.Types;
-using osu.Game.Rulesets.Osu.Judgements;
+using osu.Game.Rulesets.Keijo.Judgements;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Skinning;
 using osuTK.Graphics;
 using osu.Game.Graphics.Containers;
 
-namespace osu.Game.Rulesets.Osu.Objects.Drawables
+namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
     public class DrawableKeijoHitObject : DrawableHitObject<KeijoHitObject>
     {

@@ -4,13 +4,13 @@
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Game.Overlays.Settings;
-using osu.Game.Rulesets.Osu.Configuration;
+using osu.Game.Rulesets.Keijo.Configuration;
 
-namespace osu.Game.Rulesets.Osu.UI
+namespace osu.Game.Rulesets.Keijo.UI
 {
     public class KeijoSettingsSubsection : RulesetSettingsSubsection
     {
-        protected override string Header => "osu!";
+        protected override string Header => "osu!keijo";
 
         public KeijoSettingsSubsection(Ruleset ruleset)
             : base(ruleset)

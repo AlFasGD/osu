@@ -6,12 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Objects.Types;
-using osu.Game.Rulesets.Osu.Objects;
-using osu.Game.Rulesets.Osu.Objects.Drawables;
+using osu.Game.Rulesets.Keijo.Objects;
+using osu.Game.Rulesets.Keijo.Objects.Drawables;
 using osu.Game.Rulesets.UI;
 using static osu.Game.Input.Handlers.ReplayInputHandler;
 
-namespace osu.Game.Rulesets.Osu.Mods
+namespace osu.Game.Rulesets.Keijo.Mods
 {
     public class KeijoModRelax : ModRelax, IApplicableFailOverride, IUpdatableByPlayfield, IApplicableToDrawableRuleset<KeijoHitObject>
     {

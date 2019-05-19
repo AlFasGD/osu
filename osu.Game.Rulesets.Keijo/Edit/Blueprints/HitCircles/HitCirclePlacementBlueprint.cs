@@ -3,11 +3,11 @@
 
 using osu.Framework.Input.Events;
 using osu.Game.Rulesets.Edit;
-using osu.Game.Rulesets.Osu.Edit.Blueprints.HitCircles.Components;
-using osu.Game.Rulesets.Osu.Objects;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.HitCircles.Components;
+using osu.Game.Rulesets.Keijo.Objects;
 using osuTK;
 
-namespace osu.Game.Rulesets.Osu.Edit.Blueprints.HitCircles
+namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.HitCircles
 {
     public class HitCirclePlacementBlueprint : PlacementBlueprint
     {

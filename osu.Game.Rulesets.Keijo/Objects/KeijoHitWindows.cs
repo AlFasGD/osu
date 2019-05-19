@@ -6,7 +6,7 @@ using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Scoring;
 
-namespace osu.Game.Rulesets.Osu.Objects
+namespace osu.Game.Rulesets.Keijo.Objects
 {
     public class KeijoHitWindows : HitWindows
     {

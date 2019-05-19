@@ -7,7 +7,7 @@ using osu.Framework.Input.Bindings;
 using osu.Framework.Input.Events;
 using osu.Game.Rulesets.UI;
 
-namespace osu.Game.Rulesets.Osu
+namespace osu.Game.Rulesets.Keijo
 {
     public class KeijoInputManager : RulesetInputManager<KeijoAction>
     {
