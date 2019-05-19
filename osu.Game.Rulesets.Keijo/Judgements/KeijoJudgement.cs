@@ -33,12 +33,16 @@ namespace osu.Game.Rulesets.Keijo.Judgements
             switch (result)
             {
                 case HitResult.Miss:
-                    return -0.02;
+                    return -0.1;
 
                 case HitResult.Meh:
+                    return 0.005;
+
                 case HitResult.Good:
+                    return 0.03;
+
                 case HitResult.Great:
-                    return 0.01;
+                    return 0.075;
 
                 default:
                     return 0;
