@@ -3,12 +3,12 @@
 
 using System;
 
-namespace osu.Game.Rulesets.Keijo.Beatmaps.Baselines
+namespace osu.Game.Rulesets.Keijo.Objects.Baselines
 {
     /// <summary>
-    /// Represents a polygon baseline.
+    /// Represents a circle baseline.
     /// </summary>
-    public class PolygonBaseline : Baseline
+    public class CircleBaseline : Baseline
     {
         private uint edges;
 
@@ -16,8 +16,7 @@ namespace osu.Game.Rulesets.Keijo.Beatmaps.Baselines
         /// The number of edges of the polygon.
         /// 2 = Line
         /// 3 = Triangle
-        /// 4 = Quadrilateral
-        /// 5 = Pentagon
+        /// 4 = Square
         /// etc.
         /// </summary>
         public int Edges
@@ -31,7 +30,7 @@ namespace osu.Game.Rulesets.Keijo.Beatmaps.Baselines
             }
         }
 
-        public PolygonBaseline(int edges)
+        public CircleBaseline(int edges)
         {
             Edges = edges;
         }

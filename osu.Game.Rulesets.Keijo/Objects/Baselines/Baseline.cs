@@ -5,7 +5,7 @@ using osu.Game.Rulesets.Keijo.UI;
 using osuTK;
 using System;
 
-namespace osu.Game.Rulesets.Keijo.Beatmaps.Baselines
+namespace osu.Game.Rulesets.Keijo.Objects.Baselines
 {
     /// <summary>
     /// Represents a baseline in a <see cref="KeijoPlayfield"/>. A baseline supports the hitobjects that appear during the map.
