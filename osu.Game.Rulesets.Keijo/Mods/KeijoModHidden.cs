@@ -49,10 +49,10 @@ namespace osu.Game.Rulesets.Keijo.Mods
 
             switch (drawable)
             {
-                case DrawableHitCircle circle:
+                case DrawableHitRegion circle:
                     // we don't want to see the approach circle
                     using (circle.BeginAbsoluteSequence(h.StartTime - h.TimePreempt, true))
-                        circle.ApproachCircle.Hide();
+                        circle.ApproachRegion.Hide();
 
                     // fade out immediately after fade in.
                     using (drawable.BeginAbsoluteSequence(fadeOutStartTime, true))

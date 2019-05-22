@@ -40,7 +40,7 @@ namespace osu.Game.Rulesets.Keijo.Edit
         {
             switch (hitObject)
             {
-                case DrawableHitCircle circle:
+                case DrawableHitRegion circle:
                     return new HitCircleSelectionBlueprint(circle);
 
                 case DrawableSlider slider:

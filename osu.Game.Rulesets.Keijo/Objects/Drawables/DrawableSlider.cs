@@ -23,7 +23,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
         private readonly Slider slider;
         private readonly List<Drawable> components = new List<Drawable>();
 
-        public readonly DrawableHitCircle HeadCircle;
+        public readonly DrawableHitRegion HeadCircle;
         public readonly DrawableSliderTail TailCircle;
 
         public readonly SnakingSliderBody Body;
@@ -214,7 +214,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
             Expire(true);
         }
 
-        public Drawable ProxiedLayer => HeadCircle.ApproachCircle;
+        public Drawable ProxiedLayer => HeadCircle.ApproachRegion;
 
         public override bool ReceivePositionalInputAt(Vector2 screenSpacePos) => Body.ReceivePositionalInputAt(screenSpacePos);
     }

@@ -11,10 +11,10 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.HitCircles
 {
     public class HitCirclePlacementBlueprint : PlacementBlueprint
     {
-        public new HitCircle HitObject => (HitCircle)base.HitObject;
+        public new HitRegion HitObject => (HitRegion)base.HitObject;
 
         public HitCirclePlacementBlueprint()
-            : base(new HitCircle())
+            : base(new HitRegion())
         {
             InternalChild = new HitCirclePiece(HitObject);
         }

@@ -6,7 +6,7 @@ using osu.Game.Rulesets.Keijo.Judgements;
 
 namespace osu.Game.Rulesets.Keijo.Objects
 {
-    public class HitCircle : KeijoHitObject
+    public class HitRegion : KeijoHitObject
     {
         public override Judgement CreateJudgement() => new KeijoJudgement();
     }

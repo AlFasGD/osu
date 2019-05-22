@@ -10,7 +10,7 @@ using osuTK;
 
 namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 {
-    public class CirclePiece : Container, IKeyBindingHandler<KeijoAction>
+    public class RegionPiece : Container, IKeyBindingHandler<KeijoAction>
     {
         // IsHovered is used
         public override bool HandlePositionalInput => true;
@@ -19,7 +19,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 
         public KeijoAction? HitAction;
 
-        public CirclePiece()
+        public RegionPiece()
         {
             Size = new Vector2((float)KeijoHitObject.OBJECT_RADIUS * 2);
             Masking = true;

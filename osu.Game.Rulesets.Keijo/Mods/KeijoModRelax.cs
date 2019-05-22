@@ -40,7 +40,7 @@ namespace osu.Game.Rulesets.Keijo.Mods
                 if (osuHit.HitObject is IHasEndTime hasEnd && time > hasEnd.EndTime || osuHit.IsHit)
                     continue;
 
-                requiresHit |= osuHit is DrawableHitCircle && osuHit.IsHovered && osuHit.HitObject.HitWindows.CanBeHit(relativetime);
+                requiresHit |= osuHit is DrawableHitRegion && osuHit.IsHovered && osuHit.HitObject.HitWindows.CanBeHit(relativetime);
                 requiresHold |= osuHit is DrawableSlider slider && (slider.Ball.IsHovered || osuHit.IsHovered) || osuHit is DrawableSpinner;
             }
 

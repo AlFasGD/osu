@@ -61,7 +61,7 @@ namespace osu.Game.Rulesets.Keijo.Beatmaps
             }
             else
             {
-                yield return new HitCircle
+                yield return new HitRegion
                 {
                     StartTime = original.StartTime,
                     Samples = original.Samples,

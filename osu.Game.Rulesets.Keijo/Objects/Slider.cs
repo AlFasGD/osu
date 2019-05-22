@@ -134,7 +134,7 @@ namespace osu.Game.Rulesets.Keijo.Objects
         /// </summary>
         public double TickDistanceMultiplier = 1;
 
-        public HitCircle HeadCircle;
+        public HitRegion HeadCircle;
         public SliderTailCircle TailCircle;
 
         protected override void ApplyDefaultsToSelf(ControlPointInfo controlPointInfo, BeatmapDifficulty difficulty)

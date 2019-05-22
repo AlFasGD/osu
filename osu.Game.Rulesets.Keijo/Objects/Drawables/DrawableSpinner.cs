@@ -30,7 +30,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 
         public readonly SpinnerBackground Background;
         private readonly Container circleContainer;
-        private readonly CirclePiece circle;
+        private readonly RegionPiece circle;
         private readonly GlowPiece glow;
 
         private readonly SpriteIcon symbol;
@@ -66,7 +66,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
                     Children = new Drawable[]
                     {
                         glow = new GlowPiece(),
-                        circle = new CirclePiece
+                        circle = new RegionPiece
                         {
                             Position = Vector2.Zero,
                             Anchor = Anchor.Centre,

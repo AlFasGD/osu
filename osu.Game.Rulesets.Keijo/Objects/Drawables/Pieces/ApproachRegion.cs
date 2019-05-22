@@ -10,11 +10,11 @@ using osu.Game.Skinning;
 
 namespace osu.Game.Rulesets.Keijo.Objects.Drawables.Pieces
 {
-    public class ApproachCircle : Container
+    public class ApproachRegion : Container
     {
         public override bool RemoveWhenNotAlive => false;
 
-        public ApproachCircle()
+        public ApproachRegion()
         {
             Anchor = Anchor.Centre;
             Origin = Anchor.Centre;

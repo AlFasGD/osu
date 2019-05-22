@@ -113,7 +113,7 @@ namespace osu.Game.Rulesets.Keijo.Beatmaps
                     * It either ends with a stack of hitcircles only, or a stack of hitcircles that are underneath a slider.
                     * Any other case is handled by the "is Slider" code below this.
                     */
-                if (objectI is HitCircle)
+                if (objectI is HitRegion)
                 {
                     while (--n >= 0)
                     {

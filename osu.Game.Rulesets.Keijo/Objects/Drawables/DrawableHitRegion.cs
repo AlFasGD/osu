@@ -14,10 +14,10 @@ using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
-    public class DrawableHitCircle : DrawableKeijoHitObject, IDrawableHitObjectWithProxiedApproach
+    public class DrawableHitRegion : DrawableKeijoHitObject, IDrawableHitObjectWithProxiedApproach
     {
-        public ApproachCircle ApproachCircle;
-        private readonly CirclePiece circle;
+        public ApproachRegion ApproachRegion;
+        private readonly RegionPiece region;
         private readonly RingPiece ring;
         private readonly FlashPiece flash;
         private readonly ExplodePiece explode;
@@ -28,13 +28,13 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
         private readonly IBindable<int> stackHeightBindable = new Bindable<int>();
         private readonly IBindable<float> scaleBindable = new Bindable<float>();
 
-        public KeijoAction? HitAction => circle.HitAction;
+        public KeijoAction? HitAction => region.HitAction;
 
         private readonly Container explodeContainer;
 
         private readonly Container scaleContainer;
 
-        public DrawableHitCircle(HitCircle h)
+        public DrawableHitRegion(HitRegion h)
             : base(h)
         {
             Origin = Anchor.Centre;
@@ -56,7 +56,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
                         Children = new Drawable[]
                         {
                             glow = new GlowPiece(),
-                            circle = new CirclePiece
+                            region = new RegionPiece
                             {
                                 Hit = () =>
                                 {
@@ -74,7 +74,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
                             ring = new RingPiece(),
                             flash = new FlashPiece(),
                             explode = new ExplodePiece(),
-                            ApproachCircle = new ApproachCircle
+                            ApproachRegion = new ApproachRegion
                             {
                                 Alpha = 0,
                                 Scale = new Vector2(4),
@@ -85,7 +85,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
             };
 
             //may not be so correct
-            Size = circle.DrawSize;
+            Size = region.DrawSize;
         }
 
         [BackgroundDependencyLoader]
@@ -108,8 +108,8 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
                 base.AccentColour = value;
                 explode.Colour = AccentColour;
                 glow.Colour = AccentColour;
-                circle.Colour = AccentColour;
-                ApproachCircle.Colour = AccentColour;
+                region.Colour = AccentColour;
+                ApproachRegion.Colour = AccentColour;
             }
         }
 
@@ -138,9 +138,9 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
         {
             base.UpdatePreemptState();
 
-            ApproachCircle.FadeIn(Math.Min(HitObject.TimeFadeIn * 2, HitObject.TimePreempt));
-            ApproachCircle.ScaleTo(1.1f, HitObject.TimePreempt);
-            ApproachCircle.Expire(true);
+            ApproachRegion.FadeIn(Math.Min(HitObject.TimeFadeIn * 2, HitObject.TimePreempt));
+            ApproachRegion.ScaleTo(1.1f, HitObject.TimePreempt);
+            ApproachRegion.Expire(true);
         }
 
         protected override void UpdateCurrentState(ArmedState state)
@@ -154,20 +154,20 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 
                     Expire(true);
 
-                    circle.HitAction = null;
+                    region.HitAction = null;
 
                     // override lifetime end as FadeIn may have been changed externally, causing out expiration to be too early.
                     LifetimeEnd = HitObject.StartTime + HitObject.HitWindows.HalfWindowFor(HitResult.Miss);
                     break;
 
                 case ArmedState.Miss:
-                    ApproachCircle.FadeOut(50);
+                    ApproachRegion.FadeOut(50);
                     this.FadeOut(100);
                     Expire();
                     break;
 
                 case ArmedState.Hit:
-                    ApproachCircle.FadeOut(50);
+                    ApproachRegion.FadeOut(50);
 
                     const double flash_in = 40;
                     flash.FadeTo(0.8f, flash_in)
@@ -180,7 +180,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
                     {
                         //after the flash, we can hide some elements that were behind it
                         ring.FadeOut();
-                        circle.FadeOut();
+                        region.FadeOut();
                         number.FadeOut();
 
                         this.FadeOut(800);
@@ -192,6 +192,6 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
             }
         }
 
-        public Drawable ProxiedLayer => ApproachCircle;
+        public Drawable ProxiedLayer => ApproachRegion;
     }
 }

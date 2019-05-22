@@ -54,7 +54,7 @@ namespace osu.Game.Rulesets.Keijo.Mods
                     break;
 
                 case DrawableSlider _:
-                case DrawableHitCircle _:
+                case DrawableHitRegion _:
                 {
                     using (drawable.BeginAbsoluteSequence(h.StartTime - h.TimePreempt, true))
                         drawable.ScaleTo(0.5f).Then().ScaleTo(1, h.TimePreempt, Easing.OutSine);
@@ -65,10 +65,10 @@ namespace osu.Game.Rulesets.Keijo.Mods
             // remove approach circles
             switch (drawable)
             {
-                case DrawableHitCircle circle:
+                case DrawableHitRegion circle:
                     // we don't want to see the approach circle
                     using (circle.BeginAbsoluteSequence(h.StartTime - h.TimePreempt, true))
-                        circle.ApproachCircle.Hide();
+                        circle.ApproachRegion.Hide();
                     break;
             }
         }

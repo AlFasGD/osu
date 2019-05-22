@@ -10,14 +10,14 @@ using osuTK;
 
 namespace osu.Game.Rulesets.Keijo.Objects.Drawables
 {
-    public class DrawableSliderHead : DrawableHitCircle
+    public class DrawableSliderHead : DrawableHitRegion
     {
         private readonly IBindable<Vector2> positionBindable = new Bindable<Vector2>();
         private readonly IBindable<SliderPath> pathBindable = new Bindable<SliderPath>();
 
         private readonly Slider slider;
 
-        public DrawableSliderHead(Slider slider, HitCircle h)
+        public DrawableSliderHead(Slider slider, HitRegion h)
             : base(h)
         {
             this.slider = slider;

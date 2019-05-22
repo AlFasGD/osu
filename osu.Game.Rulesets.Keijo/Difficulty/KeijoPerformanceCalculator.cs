@@ -33,7 +33,7 @@ namespace osu.Game.Rulesets.Keijo.Difficulty
         public KeijoPerformanceCalculator(Ruleset ruleset, WorkingBeatmap beatmap, ScoreInfo score)
             : base(ruleset, beatmap, score)
         {
-            countHitCircles = Beatmap.HitObjects.Count(h => h is HitCircle);
+            countHitCircles = Beatmap.HitObjects.Count(h => h is HitRegion);
 
             beatmapMaxCombo = Beatmap.HitObjects.Count;
             // Add the ticks + tail of the slider. 1 is subtracted because the "headcircle" would be counted twice (once for the slider itself in the line above)

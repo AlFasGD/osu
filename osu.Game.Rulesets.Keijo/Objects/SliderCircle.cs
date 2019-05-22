@@ -3,7 +3,7 @@
 
 namespace osu.Game.Rulesets.Keijo.Objects
 {
-    public class SliderCircle : HitCircle
+    public class SliderCircle : HitRegion
     {
     }
 }

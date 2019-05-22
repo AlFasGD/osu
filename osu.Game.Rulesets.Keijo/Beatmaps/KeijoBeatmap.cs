@@ -13,7 +13,7 @@ namespace osu.Game.Rulesets.Keijo.Beatmaps
     {
         public override IEnumerable<BeatmapStatistic> GetStatistics()
         {
-            int circles = HitObjects.Count(c => c is HitCircle);
+            int circles = HitObjects.Count(c => c is HitRegion);
             int sliders = HitObjects.Count(s => s is Slider);
             int spinners = HitObjects.Count(s => s is Spinner);
 

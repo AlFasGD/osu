@@ -44,8 +44,8 @@ namespace osu.Game.Rulesets.Keijo.UI
         {
             switch (h)
             {
-                case HitCircle circle:
-                    return new DrawableHitCircle(circle);
+                case HitRegion circle:
+                    return new DrawableHitRegion(circle);
 
                 case Slider slider:
                     return new DrawableSlider(slider);

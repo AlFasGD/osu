@@ -12,9 +12,9 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.HitCircles.Components
 {
     public class HitCirclePiece : HitObjectPiece
     {
-        private readonly HitCircle hitCircle;
+        private readonly HitRegion hitCircle;
 
-        public HitCirclePiece(HitCircle hitCircle)
+        public HitCirclePiece(HitRegion hitCircle)
             : base(hitCircle)
         {
             this.hitCircle = hitCircle;

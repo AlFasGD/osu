@@ -11,7 +11,7 @@ namespace osu.Game.Rulesets.Keijo.Edit
     public class HitCircleCompositionTool : HitObjectCompositionTool
     {
         public HitCircleCompositionTool()
-            : base(nameof(HitCircle))
+            : base(nameof(HitRegion))
         {
         }
 

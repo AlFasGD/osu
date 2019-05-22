@@ -9,10 +9,10 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.HitCircles
 {
     public class HitCircleSelectionBlueprint : KeijoSelectionBlueprint
     {
-        public HitCircleSelectionBlueprint(DrawableHitCircle hitCircle)
+        public HitCircleSelectionBlueprint(DrawableHitRegion hitCircle)
             : base(hitCircle)
         {
-            InternalChild = new HitCirclePiece((HitCircle)hitCircle.HitObject);
+            InternalChild = new HitCirclePiece((HitRegion)hitCircle.HitObject);
         }
     }
 }
