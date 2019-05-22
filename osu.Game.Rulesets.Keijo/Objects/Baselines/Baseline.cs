@@ -4,6 +4,7 @@
 using osu.Game.Rulesets.Keijo.UI;
 using osuTK;
 using System;
+using System.Collections.Generic;
 
 namespace osu.Game.Rulesets.Keijo.Objects.Baselines
 {
@@ -29,6 +30,11 @@ namespace osu.Game.Rulesets.Keijo.Objects.Baselines
         public float Rotation;
 
         /// <summary>
+        /// The nested hit objects of this baseline.
+        /// </summary>
+        public readonly IReadOnlyList<KeijoHitObject> HitObjects = new List<KeijoHitObject>();
+
+        /// <summary>
         /// The start position of the displayed part of the baseline, represented by a ratio within [0, 1].
         /// </summary>
         public float StartPosition
@@ -44,8 +50,15 @@ namespace osu.Game.Rulesets.Keijo.Objects.Baselines
             get => displayInfo.EndPosition;
             set => displayInfo.EndPosition = value;
         }
+
+        public void AddHitObject(KeijoHitObject hitObject)
+        {
+            // Check whether this hit object can be added to this baseline determined by whether its hit window overlaps with any other hit object's hit window
+            hitObject.Baseline = this;
+        }
     }
 
+    // TODO: Rename since its usage is broader and move to another directory where it's easier to access
     /// <summary>
     /// Provides information about the range of the baseline to display.
     /// </summary>
@@ -77,6 +90,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Baselines
                 endPosition = value;
             }
         }
+
         public float Length => endPosition - startPosition;
 
         public DisplayInfo(float start = 0, float end = 1)
