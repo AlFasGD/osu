@@ -21,11 +21,9 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
         private readonly RingPiece ring;
         private readonly FlashPiece flash;
         private readonly ExplodePiece explode;
-        private readonly NumberPiece number;
         private readonly GlowPiece glow;
 
         private readonly IBindable<Vector2> positionBindable = new Bindable<Vector2>();
-        private readonly IBindable<int> stackHeightBindable = new Bindable<int>();
         private readonly IBindable<float> scaleBindable = new Bindable<float>();
 
         public KeijoAction? HitAction => region.HitAction;
@@ -67,10 +65,6 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
                                     return true;
                                 },
                             },
-                            number = new NumberPiece
-                            {
-                                Text = (HitObject.IndexInCurrentCombo + 1).ToString(),
-                            },
                             ring = new RingPiece(),
                             flash = new FlashPiece(),
                             explode = new ExplodePiece(),
@@ -92,11 +86,9 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
         private void load()
         {
             positionBindable.BindValueChanged(_ => Position = HitObject.StackedPosition);
-            stackHeightBindable.BindValueChanged(_ => Position = HitObject.StackedPosition);
             scaleBindable.BindValueChanged(scale => scaleContainer.Scale = new Vector2(scale.NewValue), true);
 
             positionBindable.BindTo(HitObject.PositionBindable);
-            stackHeightBindable.BindTo(HitObject.StackHeightBindable);
             scaleBindable.BindTo(HitObject.ScaleBindable);
         }
 
@@ -181,7 +173,6 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
                         //after the flash, we can hide some elements that were behind it
                         ring.FadeOut();
                         region.FadeOut();
-                        number.FadeOut();
 
                         this.FadeOut(800);
                         explodeContainer.ScaleTo(1.5f, 400, Easing.OutQuad);
