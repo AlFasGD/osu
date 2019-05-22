@@ -3,11 +3,9 @@
 
 using osu.Framework.Bindables;
 using osu.Game.Beatmaps;
-using osu.Game.Rulesets.Objects;
-using osuTK;
-using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Rulesets.Keijo.Objects.Baselines;
+using osu.Game.Rulesets.Objects;
 
 namespace osu.Game.Rulesets.Keijo.Objects
 {
@@ -19,7 +17,7 @@ namespace osu.Game.Rulesets.Keijo.Objects
 
         public Baseline Baseline;
 
-        public readonly Bindable<DisplayInfo> PositionBindable = new Bindable<DisplayInfo>();
+        public readonly Bindable<HitRegionPosition> PositionBindable = new Bindable<HitRegionPosition>();
 
         protected override void ApplyDefaultsToSelf(ControlPointInfo controlPointInfo, BeatmapDifficulty difficulty)
         {

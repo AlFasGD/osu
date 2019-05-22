@@ -13,7 +13,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Baselines
     /// </summary>
     public abstract class Baseline
     {
-        private DisplayInfo displayInfo;
+        private HitRegionPosition displayInfo;
 
         /// <summary>
         /// The location of the baseline in the field.
@@ -55,48 +55,6 @@ namespace osu.Game.Rulesets.Keijo.Objects.Baselines
         {
             // Check whether this hit object can be added to this baseline determined by whether its hit window overlaps with any other hit object's hit window
             hitObject.Baseline = this;
-        }
-    }
-
-    // TODO: Rename since its usage is broader and move to another directory where it's easier to access
-    /// <summary>
-    /// Provides information about the range of the baseline to display.
-    /// </summary>
-    public struct DisplayInfo
-    {
-        private float startPosition, endPosition;
-
-        public float StartPosition
-        {
-            get => startPosition;
-            set
-            {
-                if (value > endPosition)
-                    throw new InvalidOperationException("The starting position cannot be greater than the ending position.");
-                if (value < 0 || value > 1)
-                    throw new InvalidOperationException("Cannot set the position to a value outside the range [0, 1].");
-                startPosition = value;
-            }
-        }
-        public float EndPosition
-        {
-            get => endPosition;
-            set
-            {
-                if (value < startPosition)
-                    throw new InvalidOperationException("The starting position cannot be greater than the ending position.");
-                if (value < 0 || value > 1)
-                    throw new InvalidOperationException("Cannot set the position to a value outside the range [0, 1].");
-                endPosition = value;
-            }
-        }
-
-        public float Length => endPosition - startPosition;
-
-        public DisplayInfo(float start = 0, float end = 1)
-        {
-            startPosition = start;
-            endPosition = end;
         }
     }
 }
