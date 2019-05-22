@@ -12,10 +12,11 @@ namespace osu.Game.Rulesets.Keijo.Objects
     {
         private static readonly IReadOnlyDictionary<HitResult, (double od0, double od5, double od10)> base_ranges = new Dictionary<HitResult, (double, double, double)>
         {
-            { HitResult.Great, (160, 100, 40) },
-            { HitResult.Good, (280, 200, 120) },
-            { HitResult.Meh, (400, 300, 200) },
-            { HitResult.Miss, (400, 400, 400) },
+            // Prime numbers are badass
+            { HitResult.Great, (137, 83, 37) },
+            { HitResult.Good, (233, 181, 113) },
+            { HitResult.Meh, (367, 271, 173) },
+            { HitResult.Miss, (367, 367, 367) },
         };
 
         public override void SetDifficulty(double difficulty)
