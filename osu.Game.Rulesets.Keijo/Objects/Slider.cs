@@ -26,34 +26,6 @@ namespace osu.Game.Rulesets.Keijo.Objects
         public double EndTime => StartTime + this.SpanCount() * Path.Distance / Velocity;
         public double Duration => EndTime - StartTime;
 
-        private Cached<Vector2> endPositionCache;
-
-        public override Vector2 EndPosition => endPositionCache.IsValid ? endPositionCache.Value : endPositionCache.Value = Position + this.CurvePositionAt(1);
-
-        public Vector2 StackedPositionAt(double t) => StackedPosition + this.CurvePositionAt(t);
-
-        public override int ComboIndex
-        {
-            get => base.ComboIndex;
-            set
-            {
-                base.ComboIndex = value;
-                foreach (var n in NestedHitObjects.OfType<IHasComboInformation>())
-                    n.ComboIndex = value;
-            }
-        }
-
-        public override int IndexInCurrentCombo
-        {
-            get => base.IndexInCurrentCombo;
-            set
-            {
-                base.IndexInCurrentCombo = value;
-                foreach (var n in NestedHitObjects.OfType<IHasComboInformation>())
-                    n.IndexInCurrentCombo = value;
-            }
-        }
-
         public readonly Bindable<SliderPath> PathBindable = new Bindable<SliderPath>();
 
         public SliderPath Path
@@ -62,28 +34,10 @@ namespace osu.Game.Rulesets.Keijo.Objects
             set
             {
                 PathBindable.Value = value;
-                endPositionCache.Invalidate();
             }
         }
 
         public double Distance => Path.Distance;
-
-        public override Vector2 Position
-        {
-            get => base.Position;
-            set
-            {
-                base.Position = value;
-
-                if (HeadCircle != null)
-                    HeadCircle.Position = value;
-
-                if (TailCircle != null)
-                    TailCircle.Position = EndPosition;
-
-                endPositionCache.Invalidate();
-            }
-        }
 
         public double? LegacyLastTickOffset { get; set; }
 
@@ -109,7 +63,6 @@ namespace osu.Game.Rulesets.Keijo.Objects
             set
             {
                 repeatCount = value;
-                endPositionCache.Invalidate();
             }
         }
 
