@@ -131,8 +131,6 @@ namespace osu.Game.Rulesets.Keijo.Objects
                             SpanStartTime = e.SpanStartTime,
                             StartTime = e.Time,
                             Position = Position + Path.PositionAt(e.PathProgress),
-                            StackHeight = StackHeight,
-                            Scale = Scale,
                             Samples = sampleList
                         });
                         break;
@@ -144,21 +142,6 @@ namespace osu.Game.Rulesets.Keijo.Objects
                             Position = Position,
                             Samples = getNodeSamples(0),
                             SampleControlPoint = SampleControlPoint,
-                            IndexInCurrentCombo = IndexInCurrentCombo,
-                            ComboIndex = ComboIndex,
-                        });
-                        break;
-
-                    case SliderEventType.LegacyLastTick:
-                        // we need to use the LegacyLastTick here for compatibility reasons (difficulty).
-                        // it is *okay* to use this because the TailCircle is not used for any meaningful purpose in gameplay.
-                        // if this is to change, we should revisit this.
-                        AddNested(TailCircle = new SliderTailCircle(this)
-                        {
-                            StartTime = e.Time,
-                            Position = EndPosition,
-                            IndexInCurrentCombo = IndexInCurrentCombo,
-                            ComboIndex = ComboIndex,
                         });
                         break;
 
@@ -169,8 +152,6 @@ namespace osu.Game.Rulesets.Keijo.Objects
                             SpanDuration = SpanDuration,
                             StartTime = StartTime + (e.SpanIndex + 1) * SpanDuration,
                             Position = Position + Path.PositionAt(e.PathProgress),
-                            StackHeight = StackHeight,
-                            Scale = Scale,
                             Samples = getNodeSamples(e.SpanIndex + 1)
                         });
                         break;

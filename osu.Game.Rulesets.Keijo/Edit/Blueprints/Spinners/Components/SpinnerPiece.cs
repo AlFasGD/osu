@@ -44,8 +44,6 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Spinners.Components
                     Origin = Anchor.Centre
                 }
             };
-
-            ring.Scale = new Vector2(spinner.Scale);
         }
 
         [BackgroundDependencyLoader]
@@ -54,11 +52,9 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Spinners.Components
             Colour = colours.Yellow;
 
             PositionBindable.BindValueChanged(_ => updatePosition(), true);
-            StackHeightBindable.BindValueChanged(_ => updatePosition());
-            ScaleBindable.BindValueChanged(scale => ring.Scale = new Vector2(scale.NewValue), true);
         }
 
-        private void updatePosition() => Position = spinner.Position;
+        private void updatePosition() => Position = spinner.PositionAt(0); // TODO: Fix this?
 
         public override bool ReceivePositionalInputAt(Vector2 screenSpacePos) => circle.ReceivePositionalInputAt(screenSpacePos);
     }

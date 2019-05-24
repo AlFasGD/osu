@@ -24,7 +24,7 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
         private readonly GlowPiece glow;
 
         private readonly IBindable<Vector2> positionBindable = new Bindable<Vector2>();
-        private readonly IBindable<float> scaleBindable = new Bindable<float>();
+        private readonly IBindable<float> scaleBindable = new Bindable<float>(); // TODO: Determine whether scaling will be allowed and implement it accordingly
 
         public KeijoAction? HitAction => region.HitAction;
 
@@ -89,7 +89,6 @@ namespace osu.Game.Rulesets.Keijo.Objects.Drawables
             scaleBindable.BindValueChanged(scale => scaleContainer.Scale = new Vector2(scale.NewValue), true);
 
             positionBindable.BindTo(HitObject.PositionBindable);
-            scaleBindable.BindTo(HitObject.ScaleBindable);
         }
 
         public override Color4 AccentColour

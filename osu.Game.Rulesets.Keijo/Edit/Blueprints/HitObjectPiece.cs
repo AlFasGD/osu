@@ -15,7 +15,6 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints
     public abstract class HitObjectPiece : CompositeDrawable
     {
         protected readonly IBindable<Vector2> PositionBindable = new Bindable<Vector2>();
-        protected readonly IBindable<int> StackHeightBindable = new Bindable<int>();
         protected readonly IBindable<float> ScaleBindable = new Bindable<float>();
 
         private readonly KeijoHitObject hitObject;
@@ -29,7 +28,6 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints
         private void load()
         {
             PositionBindable.BindTo(hitObject.PositionBindable);
-            StackHeightBindable.BindTo(hitObject.StackHeightBindable);
             ScaleBindable.BindTo(hitObject.ScaleBindable);
         }
     }

@@ -35,11 +35,11 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components
             switch (position)
             {
                 case SliderPosition.Start:
-                    Position = slider.StackedPosition + slider.Path.PositionAt(0);
+                    Position = slider.StartPosition + slider.Path.PositionAt(0);
                     break;
 
                 case SliderPosition.End:
-                    Position = slider.StackedPosition + slider.Path.PositionAt(1);
+                    Position = slider.EndPosition;
                     break;
             }
         }

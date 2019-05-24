@@ -55,7 +55,7 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components
         {
             base.Update();
 
-            Position = slider.StackedPosition + slider.Path.ControlPoints[index];
+            Position = slider.Position + slider.Path.ControlPoints[index];
 
             marker.Colour = isSegmentSeparator ? colours.Red : colours.Yellow;
 

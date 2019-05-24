@@ -70,29 +70,7 @@ namespace osu.Game.Rulesets.Objects
 
             double totalDuration = spanCount * spanDuration;
 
-            // Okay, I'll level with you. I made a mistake. It was 2007.
-            // Times were simpler. osu! was but in its infancy and sliders were a new concept.
-            // A hack was made, which has unfortunately lived through until this day.
-            //
-            // This legacy tick is used for some calculations and judgements where audio output is not required.
-            // Generally we are keeping this around just for difficulty compatibility.
-            // Optimistically we do not want to ever use this for anything user-facing going forwards.
-
             int finalSpanIndex = spanCount - 1;
-            double finalSpanStartTime = startTime + finalSpanIndex * spanDuration;
-            double finalSpanEndTime = Math.Max(startTime + totalDuration / 2, (finalSpanStartTime + spanDuration) - (legacyLastTickOffset ?? 0));
-            double finalProgress = (finalSpanEndTime - finalSpanStartTime) / spanDuration;
-
-            if (spanCount % 2 == 0) finalProgress = 1 - finalProgress;
-
-            yield return new SliderEventDescriptor
-            {
-                Type = SliderEventType.LegacyLastTick,
-                SpanIndex = finalSpanIndex,
-                SpanStartTime = finalSpanStartTime,
-                Time = finalSpanEndTime,
-                PathProgress = finalProgress,
-            };
 
             yield return new SliderEventDescriptor
             {
@@ -140,7 +118,6 @@ namespace osu.Game.Rulesets.Objects
     public enum SliderEventType
     {
         Tick,
-        LegacyLastTick,
         Head,
         Tail,
         Repeat

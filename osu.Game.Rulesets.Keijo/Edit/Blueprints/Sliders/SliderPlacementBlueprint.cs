@@ -1,25 +1,26 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using System.Collections.Generic;
-using System.Linq;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.IEnumerableExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics;
 using osu.Game.Rulesets.Edit;
+using osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components;
+using osu.Game.Rulesets.Keijo.Objects;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Types;
-using osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders.Components;
 using osuTK;
 using osuTK.Input;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders
 {
     public class SliderPlacementBlueprint : PlacementBlueprint
     {
-        public new Objects.Slider HitObject => (Objects.Slider)base.HitObject;
+        public new Slider HitObject => (Slider)base.HitObject;
 
         private readonly List<Segment> segments = new List<Segment>();
         private Vector2 cursor;
@@ -27,7 +28,7 @@ namespace osu.Game.Rulesets.Keijo.Edit.Blueprints.Sliders
         private PlacementState state;
 
         public SliderPlacementBlueprint()
-            : base(new Objects.Slider())
+            : base(new Slider())
         {
             RelativeSizeAxes = Axes.Both;
             segments.Add(new Segment(Vector2.Zero));
